@@ -1,0 +1,60 @@
+[
+  {
+    "orderID": "ORD-1001",
+    "products": [
+      {
+        "productID": "PROD-11",
+        "quantity": 4
+      }
+    ],
+    "orderWorth": 4839
+  },
+  {
+    "orderID": "ORD-1002",
+    "products": [
+      {
+        "productID": "PROD-21",
+        "quantity": 5
+      }
+    ],
+    "orderWorth": 3100
+  },
+  {
+    "orderID": "ORD-1003",
+    "products": [
+      {
+        "productID": "PROD-31",
+        "quantity": 1
+      },
+      {
+        "productID": "PROD-32",
+        "quantity": 5
+      }
+    ],
+    "orderWorth": 5380
+  },
+  {
+    "orderID": "ORD-1004",
+    "products": [
+      {
+        "productID": "PROD-41",
+        "quantity": 3
+      },
+      {
+        "productID": "PROD-42",
+        "quantity": 5
+      }
+    ],
+    "orderWorth": 4946
+  },
+  {
+    "orderID": "ORD-1005",
+    "products": [
+      {
+        "productID": "PROD-51",
+        "quantity": 2
+      }
+    ],
+    "orderWorth": 4765
+  }
+]
