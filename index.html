@@ -11,14 +11,14 @@
 <body>
     <header>
         <div class="left-header">
-            <div class="logo-container">
-                <img src="./images/logo.png" alt="Forma'Sint">
+            <div class="logo">
+                <img src="images/logo.png" alt="F" class="logo-img">
                 <span class="logo-text">FORMA'SINT.</span>
             </div>
-            <div class="logo-subtitle">IDOMOS <span class="code-tag">&lt;/&gt;</span></div>
+            <div class="logo-subtitle">IDOMODS <span class="code-tag">&lt;/&gt;</span></div>
         </div>
 
-        <nav>
+        <nav class="desktop-nav">
             <ul>
                 <li><a href="#" class="active">HOME</a></li>
                 <li><a href="#">FEATURED PRODUCTS</a></li>
@@ -26,19 +26,28 @@
             </ul>
         </nav>
 
+        <div class="mobile-menu-btn">
+            <div class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <span class="menu-text">MENU</span>
+        </div>
+
         <div class="user-info">
-            <img src="./images/user.png" alt="Forma'Sint">
+            <img src="images/user.png" alt="User" class="user-icon">
             <span class="user-role">FRONTEND DEVELOPER</span>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <div class="hero">
             <h1>Forma'Sint.</h1>
             <div class="hero-image">
-                <img src="./images/hero_photo.png" alt="Forma'Sint">
+                <img src="images/hero_photo.png" alt="Wspinacz górski" class="full-image">
             </div>
-        </section>
+        </div>
     </main>
 
     <script src="script.js"></script>
