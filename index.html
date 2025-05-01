@@ -24,7 +24,7 @@
             <ul>
                 <li><a href="#" class="active">HOME</a></li>
                 <li><a href="#featured-products">FEATURED PRODUCTS</a></li>
-                <li><a href="#">PRODUCT LISTING</a></li>
+                <li><a href="#product-listing">PRODUCT LISTING</a></li>
             </ul>
         </nav>
 
@@ -99,6 +99,47 @@
             <div class="section-separator-container">
                 <div class="section-separator">
                     <div class="section-separator-progress" id="scroll-progress-bar"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Nowa sekcja produktów w siatce -->
+        <section class="products-grid-section" id="product-listing">
+            
+            <div class="products-grid-options">
+                <div class="products-per-page">
+                    <span class="options-label">NUMBER OF PRODUCTS PER PAGE</span>
+                    <div class="dropdown-selector">
+                        <span class="selected-option">14</span>
+                        <img src="images/arrow.png" alt="dropdown arrow" class="dropdown-arrow">
+                        <div class="dropdown-options">
+                            <div class="dropdown-option" data-value="14">14</div>
+                            <div class="dropdown-option" data-value="24">24</div>
+                            <div class="dropdown-option" data-value="36">36</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="products-grid-container">
+                <!-- Loader dla produktów -->
+                <div class="loader" id="products-grid-loader">
+                    <div class="spinner"></div>
+                </div>
+                
+                <!-- Tutaj będą dodawane produkty -->
+                <div class="products-grid" id="products-grid">
+                    <!-- Banner promocyjny statycznie w HTML -->
+                    <div class="promo-banner">
+                        <img src="images/narty.jpg" alt="Narciarz na stoku" class="promo-banner-image">
+                        <div class="promo-banner-content">
+                            <div class="promo-banner-header">
+                                <span class="promo-banner-label">FORMA'SINT.</span>
+                                <h3 class="promo-banner-title">You'll look and feel like the champion.</h3>
+                            </div>
+                            <button class="promo-banner-button">CHECK THIS OUT <span class="button-arrow">›</span></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
