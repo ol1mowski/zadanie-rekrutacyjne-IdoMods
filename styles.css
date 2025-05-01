@@ -54,7 +54,6 @@ header {
     position: relative;
     z-index: 10;
     font-size: var(--header-font-size);
-    border-bottom: 1px dotted #ccc;
 }
 
 .left-header {
@@ -91,6 +90,7 @@ header {
     margin-left: 2px;
 }
 
+/* Domyślne ustawienia dla dużych ekranów (powyżej 1020px) */
 .mobile-menu-btn {
     display: none;
     align-items: center;
@@ -183,6 +183,113 @@ nav a.active::after {
     font-weight: 500;
 }
 
+/* Menu mobilne */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: var(--white);
+    z-index: 1000;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding-right: 1rem;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    margin-top: 10px;
+}
+
+.mobile-menu .logo {
+    padding-left: 0.5rem;
+}
+
+.mobile-menu .logo-img {
+    width: 24px;
+    height: 24px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+}
+
+.close-btn span {
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 300;
+}
+
+.mobile-menu-content {
+    padding: 1.5rem 1.5rem;
+    padding-top: 3.5rem;
+}
+
+.mobile-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    align-items: flex-start;
+}
+
+.mobile-nav li {
+    width: 100%;
+}
+
+.mobile-nav a {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0.3rem 0;
+    text-decoration: none;
+    color: var(--main-black);
+}
+
+.mobile-nav a:hover {
+    opacity: 0.7;
+}
+
+/* Dodatkowe style dla overlay przy otwartym menu */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* Główna sekcja */
 main {
     flex: 1;
@@ -220,7 +327,7 @@ h1 {
     width: 95%;
     border-radius: 10px;
     height: 100%;
-    margin: auto;
+    margin: 0 auto;
     display: block;
     object-fit: cover;
 }
@@ -249,60 +356,62 @@ h1 {
     text-align: center;
 }
 
+/* Dodajemy pustą przestrzeń dla struktury header */
+.header-spacer {
+    flex: 1;
+}
+
+/* Na desktopie nie potrzebujemy dużej przestrzeni, ponieważ mamy nawigację na środku */
+@media (min-width: 1021px) {
+    .header-spacer {
+        flex: 0.2; /* Mniejsza przestrzeń na desktopie */
+    }
+}
+
+/* Dodatkowe zabezpieczenie dla menu mobilnego na desktopie */
+.mobile-menu, .menu-overlay {
+    display: none;
+}
+
 /* Responsywność */
 @media (max-width: 1400px) {
     :root {
-        --h1-font-size: 120px;
+        --h1-font-size: 130px;
     }
 }
 
 @media (max-width: 1200px) {
     :root {
-        --h1-font-size: 100px;
+        --h1-font-size: 110px;
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1020px) {
     :root {
-        --h1-font-size: 80px;
+        --h1-font-size: 90px;
     }
     
     header {
-        padding: 1rem;
+        padding: 1rem 1.5rem;
     }
     
     nav ul {
         gap: 1.5rem;
     }
     
-    .hero {
-        height: calc(100vh - 70px);
-    }
-}
-
-@media (max-width: 768px) {
-    :root {
-        --h1-font-size: 60px;
+    /* Menu mobilne i overlay są dostępne tylko na ekranach poniżej 1020px */
+    .mobile-menu, .menu-overlay {
+        display: block;
     }
     
-    header {
-        justify-content: space-between;
-        padding: 1rem 1rem;
-        border-bottom: 1px dotted #ccc;
-        border-left: 1px dotted #ccc;
-        border-right: 1px dotted #ccc;
-    }
-    
-    body {
-        border-top: 1px dotted #ccc;
-    }
-    
-    .desktop-nav {
-        display: none !important;
-    }
-    
+    /* Poniżej 1020px wyświetla się tylko ikona hamburger */
     .mobile-menu-btn {
         display: flex;
+    }
+    
+    /* Poniżej 1020px menu desktopowe jest ukryte */
+    .desktop-nav {
+        display: none !important;
     }
     
     .user-info {
@@ -310,11 +419,15 @@ h1 {
     }
     
     .hero {
-        padding-top: 2rem;
-        height: calc(100vh - 70px);
+        height: calc(100vh - 64px);
+    }
+    
+    .hero {
+        padding-top: 0.5rem;
     }
     
     .full-image {
+        width: 95%;
         border-radius: 10px;
     }
 }
@@ -325,15 +438,14 @@ h1 {
     }
     
     header {
-        padding: 0.75rem 1rem;
+        padding: 0.75rem;
     }
     
     .logo-subtitle {
         display: none;
     }
     
-    
     .hero {
-        height: calc(100vh - 60px);
+        height: calc(100vh - 56px);
     }
 } 
