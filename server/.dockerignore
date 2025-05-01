@@ -1,0 +1,28 @@
+# Dependencies
+node_modules
+npm-debug.log
+
+# Pliki środowiskowe
+.env
+.env.*
+!.env.example
+
+# Pliki systemowe
+.DS_Store
+.git
+.gitignore
+
+# Pliki build i cache
+dist
+build
+coverage
+.nyc_output
+.cache
+
+# Pliki danych (jeśli są tworzone lokalnie)
+/data/*
+!/data/.gitkeep
+
+# Logi
+logs
+*.log 
