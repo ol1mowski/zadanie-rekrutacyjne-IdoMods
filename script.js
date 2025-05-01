@@ -4,6 +4,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeBtn = document.querySelector('.close-btn');
     const menuLinks = document.querySelectorAll('.mobile-nav a');
     const overlay = document.querySelector('.menu-overlay');
+    const header = document.querySelector('header');
+    const body = document.body;
+    
+    // Funkcja do obsługi sticky header
+    function handleStickyHeader() {
+        const scrollY = window.scrollY;
+        // Zmień wartość 100 na wysokość, po której header ma stać się sticky
+        if (scrollY > 100) {
+            header.classList.add('sticky');
+            body.classList.add('has-sticky-header');
+        } else {
+            header.classList.remove('sticky');
+            body.classList.remove('has-sticky-header');
+        }
+    }
+    
+    // Nasłuchiwanie zdarzenia przewijania dla sticky header
+    window.addEventListener('scroll', handleStickyHeader);
     
     // Funkcja sprawdzająca, czy jesteśmy na urządzeniu mobilnym
     function isMobile() {
