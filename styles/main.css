@@ -1,0 +1,12 @@
+/* Główny plik CSS importujący wszystkie komponenty */
+
+/* Importuj podstawowe style */
+@import 'base/variables.css';
+@import 'base/global.css';
+
+/* Importuj komponenty */
+@import 'header.css';
+@import 'hero.css';
+@import 'featured-products.css';
+@import 'product-listing.css';
+@import 'product-popup.css'; 
