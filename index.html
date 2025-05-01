@@ -23,7 +23,7 @@
         <nav class="desktop-nav">
             <ul>
                 <li><a href="#" class="active">HOME</a></li>
-                <li><a href="#">FEATURED PRODUCTS</a></li>
+                <li><a href="#featured-products">FEATURED PRODUCTS</a></li>
                 <li><a href="#">PRODUCT LISTING</a></li>
             </ul>
         </nav>
@@ -73,6 +73,35 @@
                 <img src="images/hero_photo.png" alt="Wspinacz górski" class="full-image">
             </div>
         </div>
+        
+        <!-- Sekcja produktów -->
+        <section class="products-section" id="featured-products">
+            <div class="section-header">
+                <span class="section-label">FEATURED PRODUCTS</span>
+                <h2>Browse featured</h2>
+            </div>
+            
+            <div class="products-container">
+                <img src="images/arrow.png" alt="scroll-left" class="products-scroll-btn scroll-left-btn" id="scroll-left-btn">
+                
+                <!-- Produkty będą dodawane dynamicznie przez JavaScript -->
+                <div class="products-wrapper" id="products-wrapper">
+                    <!-- Loader podczas ładowania produktów -->
+                    <div class="loader" id="products-loader">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+                
+                <img src="images/arrow.png" alt="scroll-right" class="products-scroll-btn scroll-right-btn" id="scroll-right-btn">
+            </div>
+            
+            <!-- Linia separująca na dole sekcji produktów z indykatorem przewijania -->
+            <div class="section-separator-container">
+                <div class="section-separator">
+                    <div class="section-separator-progress" id="scroll-progress-bar"></div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="script.js"></script>
