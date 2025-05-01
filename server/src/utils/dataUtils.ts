@@ -8,57 +8,87 @@ export const hasOrderChanged = (
     return true;
   }
   
-  if (existingOrder.products.length !== newOrder.products.length) {
+  if (existingOrder.customerName !== newOrder.customerName) {
     return true;
   }
   
-  const existingProductMap = new Map<string, number>();
-  for (const product of existingOrder.products) {
-    existingProductMap.set(product.productID, product.quantity);
+  if (existingOrder.status !== newOrder.status) {
+    return true;
   }
   
-  for (const newProduct of newOrder.products) {
-    const existingQuantity = existingProductMap.get(newProduct.productID);
-    
-    if (existingQuantity === undefined || existingQuantity !== newProduct.quantity) {
+  if (existingOrder.products && newOrder.products) {
+    if (existingOrder.products.length !== newOrder.products.length) {
       return true;
     }
+    
+    const existingProductMap = new Map<string, number>();
+    for (const product of existingOrder.products) {
+      existingProductMap.set(product.productID, product.quantity);
+    }
+    
+    for (const newProduct of newOrder.products) {
+      const existingQuantity = existingProductMap.get(newProduct.productID);
+      
+      if (existingQuantity === undefined || existingQuantity !== newProduct.quantity) {
+        return true;
+      }
+    }
+  } else if (existingOrder.products || newOrder.products) {
+    return true;
   }
   
   return false;
 };
 
 export const processOrderData = (orderData: any): ProcessedOrder | null => {
-  if (!orderData || !orderData.orderId || !orderData.orderDetails) {
+  if (!orderData) {
     return null;
   }
   
   try {
-    const orderID = orderData.orderId;
+    const orderID = orderData.id || orderData.orderId || orderData.orderID;
+    if (!orderID) {
+      return null;
+    }
+    
     const products: ProcessedProduct[] = [];
     
     const productsData = orderData.orderDetails?.productsResults;
     if (Array.isArray(productsData)) {
       productsData.forEach(productData => {
-        if (productData && productData.productId !== undefined && productData.productQuantity !== undefined) {
+        if (productData) {
           products.push({
-            productID: String(productData.productId),
-            quantity: productData.productQuantity
-          });
+            productID: String(productData.productId || productData.id || ''),
+            quantity: productData.productQuantity || productData.quantity || 1,
+            name: productData.name
+          } as any);
         }
       });
     }
     
-    let orderWorth = 0;
-    if (orderData.orderDetails?.payments?.orderCurrency?.orderProductsCost) {
+    let orderWorth = orderData.worth || orderData.orderWorth;
+    if (typeof orderWorth !== 'number' && orderData.orderDetails?.payments?.orderCurrency?.orderProductsCost) {
       orderWorth = parseFloat(orderData.orderDetails.payments.orderCurrency.orderProductsCost);
     }
     
-    return {
+    const result: any = {
       orderID,
       products,
-      orderWorth
+      orderWorth: orderWorth || 0
     };
+    
+    if (orderData.status || orderData.orderStatus) {
+      result.status = orderData.status || orderData.orderStatus;
+    }
+    
+    if (orderData.customer) {
+      result.customerName = orderData.customer.name;
+      result.customerEmail = orderData.customer.email;
+    } else if (orderData.customerName) {
+      result.customerName = orderData.customerName;
+    }
+    
+    return result;
   } catch (err) {
     console.error('Błąd podczas przetwarzania danych zamówienia:', err);
     return null;

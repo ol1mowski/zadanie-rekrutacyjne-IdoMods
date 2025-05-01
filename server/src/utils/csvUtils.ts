@@ -15,20 +15,20 @@ export const escapeCSVField = (value: string | number | undefined): string => {
 };
 
 export const ordersToCSV = (orders: ProcessedOrder[]): string => {
-  const headers = ['OrderID', 'OrderWorth', 'ProductsCount', 'ProductIDs', 'ProductQuantities', 'Date'];
+  const headers = ['orderID', 'orderWorth', 'customerName', 'status', 'date', 'productsCount'];
   let csv = headers.join(',') + '\n';
   
   for (const order of orders) {
-    const productIDs = order.products.map(p => p.productID).join(';');
-    const productQuantities = order.products.map(p => p.quantity).join(';');
+    const products = order.products || [];
+    const productsCount = products.length;
     
     const row = [
       escapeCSVField(order.orderID),
       escapeCSVField(order.orderWorth),
-      escapeCSVField(order.products.length),
-      escapeCSVField(productIDs),
-      escapeCSVField(productQuantities),
-      escapeCSVField(order.date || '')
+      escapeCSVField(order.customerName || ''),
+      escapeCSVField(order.status || ''),
+      escapeCSVField(order.date || ''),
+      escapeCSVField(productsCount)
     ];
     
     csv += row.join(',') + '\n';
@@ -40,20 +40,27 @@ export const ordersToCSV = (orders: ProcessedOrder[]): string => {
 export const orderToDetailedCSV = (order: ProcessedOrder | null): string => {
   if (!order) return '';
   
-  let csv = `Zamówienie: ${escapeCSVField(order.orderID)}\n`;
-  csv += `Wartość zamówienia: ${escapeCSVField(order.orderWorth)}\n`;
-  csv += `Data aktualizacji: ${escapeCSVField(order.date || '')}\n\n`;
+  const headers = ['orderID', 'orderWorth', 'customerName', 'customerEmail', 'customerPhone', 'status', 'date', 'shippingAddress', 'paymentMethod', 'products'];
   
-  csv += 'ProductID,Quantity\n';
+  let csv = headers.join(',') + '\n';
   
-  for (const product of order.products) {
-    const row = [
-      escapeCSVField(product.productID),
-      escapeCSVField(product.quantity)
-    ];
-    
-    csv += row.join(',') + '\n';
-  }
+  const products = order.products || [];
+  const productsStr = products.map(p => p.name || p.productID).join('; ');
+  
+  const orderRow = [
+    escapeCSVField(order.orderID),
+    escapeCSVField(order.orderWorth),
+    escapeCSVField(order.customerName || ''),
+    escapeCSVField(order.customerEmail || ''),
+    escapeCSVField(order.customerPhone || ''),
+    escapeCSVField(order.status || ''),
+    escapeCSVField(order.date || ''),
+    escapeCSVField(order.shippingAddress || ''),
+    escapeCSVField(order.paymentMethod || ''),
+    escapeCSVField(productsStr)
+  ];
+  
+  csv += orderRow.join(',') + '\n';
   
   return csv;
 };

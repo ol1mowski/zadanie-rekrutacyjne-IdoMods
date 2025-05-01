@@ -75,11 +75,18 @@ export interface ProcessedOrder {
   products: ProcessedProduct[];
   orderWorth: number;
   date?: string;
+  status?: string;
+  customerName?: string;
+  customerEmail?: string;
+  customerPhone?: string;
+  shippingAddress?: string;
+  paymentMethod?: string;
 }
 
 export interface ProcessedProduct {
   productID: string;
   quantity: number;
+  name?: string;
 }
 
 export interface OrderFilterParams {

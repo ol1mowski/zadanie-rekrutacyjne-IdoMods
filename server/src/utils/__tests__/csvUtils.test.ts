@@ -24,16 +24,13 @@ describe('CSV Utils', () => {
       
       const csv = ordersToCSV(mockOrders);
       
-      // CSV should have a header and two data rows
       const lines = csv.trim().split('\n');
       expect(lines.length).toBe(3);
       
-      // Check that header contains important columns
       expect(lines[0]).toContain('orderID');
       expect(lines[0]).toContain('orderWorth');
       expect(lines[0]).toContain('customerName');
       
-      // Check that data rows contain the expected values
       expect(lines[1]).toContain('1');
       expect(lines[1]).toContain('100');
       expect(lines[1]).toContain('Test Customer 1');
@@ -46,7 +43,6 @@ describe('CSV Utils', () => {
     it('should handle empty orders array', () => {
       const csv = ordersToCSV([]);
       
-      // Should still have a header row but no data rows
       const lines = csv.trim().split('\n');
       expect(lines.length).toBe(1);
       expect(lines[0]).toContain('orderID');
@@ -56,14 +52,12 @@ describe('CSV Utils', () => {
       const mockOrders = [
         {
           orderID: '1',
-          // Missing orderWorth
           customerName: 'Test Customer 1'
         }
       ] as unknown as ProcessedOrder[];
       
       const csv = ordersToCSV(mockOrders);
       
-      // Should handle the missing property without throwing errors
       const lines = csv.trim().split('\n');
       expect(lines.length).toBe(2);
       expect(lines[1]).toContain('1');
@@ -87,17 +81,14 @@ describe('CSV Utils', () => {
       
       const csv = orderToDetailedCSV(mockOrder);
       
-      // CSV should have a header and one data row
       const lines = csv.trim().split('\n');
       expect(lines.length).toBe(2);
       
-      // Check that header contains important columns, including detailed ones
       expect(lines[0]).toContain('orderID');
       expect(lines[0]).toContain('orderWorth');
       expect(lines[0]).toContain('customerName');
       expect(lines[0]).toContain('products');
       
-      // Check that data rows contain the expected values and product details
       expect(lines[1]).toContain('1');
       expect(lines[1]).toContain('100');
       expect(lines[1]).toContain('Test Customer 1');
@@ -112,12 +103,10 @@ describe('CSV Utils', () => {
         customerName: 'Test Customer 1',
         status: 'completed',
         date: '2023-01-01'
-        // Missing products array
       } as unknown as ProcessedOrder;
       
       const csv = orderToDetailedCSV(mockOrder);
       
-      // Should handle the missing products without throwing errors
       const lines = csv.trim().split('\n');
       expect(lines.length).toBe(2);
       expect(lines[1]).toContain('1');
@@ -143,7 +132,6 @@ describe('CSV Utils', () => {
       
       const csv = orderToDetailedCSV(mockOrder);
       
-      // Should include all the provided properties
       const lines = csv.trim().split('\n');
       expect(lines[0]).toContain('customerEmail');
       expect(lines[0]).toContain('customerPhone');

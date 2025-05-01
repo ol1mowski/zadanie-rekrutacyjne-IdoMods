@@ -1,0 +1,291 @@
+[2025-05-01T22:13:45.339Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-01T22:14:19.091Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T22:14:19.092Z] [INFO] Wykonano getOrders controller w czasie 1.22ms
+[2025-05-01T22:14:19.094Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T22:14:19.096Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T22:14:19.098Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T22:14:19.098Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.40ms
+[2025-05-01T22:14:19.100Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T22:14:19.101Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T22:14:19.101Z] [INFO] Wykonano refreshOrders controller w czasie 0.77ms
+[2025-05-01T22:14:26.296Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T22:14:26.297Z] [INFO] Wykonano getOrders controller w czasie 1.28ms
+[2025-05-01T22:14:26.299Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T22:14:26.301Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T22:14:26.303Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T22:14:26.303Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.33ms
+[2025-05-01T22:14:26.305Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T22:14:26.305Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T22:14:26.306Z] [INFO] Wykonano refreshOrders controller w czasie 0.53ms
+[2025-05-01T22:14:44.441Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T22:14:44.442Z] [INFO] Wykonano getOrders controller w czasie 1.36ms
+[2025-05-01T22:14:44.444Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T22:14:44.445Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T22:14:44.448Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T22:14:44.448Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.50ms
+[2025-05-01T22:14:44.451Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T22:14:44.451Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T22:14:44.451Z] [INFO] Wykonano refreshOrders controller w czasie 0.71ms
+[2025-05-01T22:18:27.851Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T22:18:27.853Z] [INFO] Wykonano getOrders controller w czasie 1.29ms
+[2025-05-01T22:18:27.854Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T22:18:27.857Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T22:18:27.859Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T22:18:27.859Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.49ms
+[2025-05-01T22:18:27.861Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T22:18:27.861Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T22:18:27.862Z] [INFO] Wykonano refreshOrders controller w czasie 0.60ms
+[2025-05-01T22:18:41.110Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T22:18:41.111Z] [INFO] Wykonano getOrders controller w czasie 1.22ms
+[2025-05-01T22:18:41.113Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T22:18:41.115Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T22:18:41.118Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T22:18:41.118Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.46ms
+[2025-05-01T22:18:41.120Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T22:18:41.120Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T22:18:41.121Z] [INFO] Wykonano refreshOrders controller w czasie 0.61ms
+[2025-05-01T22:23:28.798Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T22:23:28.800Z] [INFO] Wykonano getOrders controller w czasie 1.76ms
+[2025-05-01T22:23:28.802Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T22:23:28.804Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T22:23:28.806Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T22:23:28.806Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.45ms
+[2025-05-01T22:23:28.808Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T22:23:28.808Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T22:23:28.808Z] [INFO] Wykonano refreshOrders controller w czasie 0.58ms
+[2025-05-01T22:23:47.594Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T22:23:47.595Z] [INFO] Wykonano getOrders controller w czasie 1.21ms
+[2025-05-01T22:23:47.596Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T22:23:47.599Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T22:23:47.600Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T22:23:47.601Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.38ms
+[2025-05-01T22:23:47.603Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T22:23:47.603Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T22:23:47.604Z] [INFO] Wykonano refreshOrders controller w czasie 0.67ms
+[2025-05-01T22:23:53.656Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T22:23:53.657Z] [INFO] Wykonano getOrders controller w czasie 1.25ms
+[2025-05-01T22:23:53.659Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T22:23:53.661Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T22:23:53.663Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T22:23:53.663Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.34ms
+[2025-05-01T22:23:53.665Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T22:23:53.665Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T22:23:53.666Z] [INFO] Wykonano refreshOrders controller w czasie 0.90ms
+[2025-05-01T22:24:16.100Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T22:24:16.102Z] [INFO] Wykonano getOrders controller w czasie 2.37ms
+[2025-05-01T22:24:16.104Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T22:24:16.106Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T22:24:16.109Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T22:24:16.109Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.42ms
+[2025-05-01T22:24:16.111Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T22:24:16.111Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T22:24:16.111Z] [INFO] Wykonano refreshOrders controller w czasie 0.55ms
+[2025-05-01T22:24:23.322Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T22:24:23.323Z] [INFO] Wykonano getOrders controller w czasie 1.20ms
+[2025-05-01T22:24:23.325Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T22:24:23.327Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T22:24:23.328Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T22:24:23.328Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.36ms
+[2025-05-01T22:24:23.330Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T22:24:23.331Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T22:24:23.332Z] [INFO] Wykonano refreshOrders controller w czasie 1.23ms
+[2025-05-01T22:24:58.123Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T22:24:58.125Z] [INFO] Wykonano getOrders controller w czasie 1.41ms
+[2025-05-01T22:24:58.126Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T22:24:58.128Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T22:24:58.130Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T22:24:58.130Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.44ms
+[2025-05-01T22:24:58.133Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T22:24:58.133Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T22:24:58.133Z] [INFO] Wykonano refreshOrders controller w czasie 0.85ms
+[2025-05-01T22:25:30.275Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-01T22:25:52.504Z] [INFO] Pobrano 100 zamówień z filtrem
+{}
+[2025-05-01T22:25:52.508Z] [INFO] Wykonano getOrders controller w czasie 3.52ms
+[2025-05-01T22:25:58.161Z] [INFO] Wygenerowano CSV dla 100 zamówień
+[2025-05-01T22:25:58.162Z] [INFO] Wykonano getOrdersCSV controller w czasie 1.98ms
+[2025-05-01T22:26:06.747Z] [INFO] Pobrano zamówienie o ID aaaa@aa.aa-1
+[2025-05-01T22:26:24.806Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 0 zamówień.
+[2025-05-01T22:26:24.807Z] [INFO] Pobieranie zamówień z API idoSell
+{
+  "params": {
+    "orderPrepaidStatus": "unpaid",
+    "ordersStatuses": [
+      "finished",
+      "ready",
+      "payment_waiting",
+      "new"
+    ]
+  },
+  "resultsPage": 0,
+  "resultsLimit": 100
+}
+[2025-05-01T22:26:24.929Z] [ERROR] Błąd podczas pobierania zamówień z idoSell
+{
+  "message": "getaddrinfo ENOTFOUND undefined",
+  "name": "Error",
+  "stack": "Error: getaddrinfo ENOTFOUND undefined\n    at Function.AxiosError.from (/Users/oliwier/Desktop/Projects/zadanie-rekrutacyjne-IdoMods/server/node_modules/axios/lib/core/AxiosError.js:92:14)\n    at RedirectableRequest.handleRequestError (/Users/oliwier/Desktop/Projects/zadanie-rekrutacyjne-IdoMods/server/node_modules/axios/lib/adapters/http.js:620:25)\n    at RedirectableRequest.emit (node:events:526:35)\n    at RedirectableRequest.emit (node:domain:489:12)\n    at ClientRequest.eventHandlers.<computed> (/Users/oliwier/Desktop/Projects/zadanie-rekrutacyjne-IdoMods/server/node_modules/follow-redirects/index.js:49:24)\n    at ClientRequest.emit (node:events:514:28)\n    at ClientRequest.emit (node:domain:489:12)\n    at TLSSocket.socketErrorListener (node:_http_client:495:9)\n    at TLSSocket.emit (node:events:514:28)\n    at TLSSocket.emit (node:domain:489:12)\n    at Axios.request (/Users/oliwier/Desktop/Projects/zadanie-rekrutacyjne-IdoMods/server/node_modules/axios/lib/core/Axios.js:45:41)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/oliwier/Desktop/Projects/zadanie-rekrutacyjne-IdoMods/server/src/services/idoSellService.ts:42:26\n    at async logExecutionTime (/Users/oliwier/Desktop/Projects/zadanie-rekrutacyjne-IdoMods/server/src/utils/logUtils.ts:106:20)\n    at async OrderScheduler.fetchOrders (/Users/oliwier/Desktop/Projects/zadanie-rekrutacyjne-IdoMods/server/src/schedulers/orderScheduler.ts:49:22)",
+  "config": {
+    "transitional": {
+      "silentJSONParsing": true,
+      "forcedJSONParsing": true,
+      "clarifyTimeoutError": false
+    },
+    "adapter": [
+      "xhr",
+      "http",
+      "fetch"
+    ],
+    "transformRequest": [
+      null
+    ],
+    "transformResponse": [
+      null
+    ],
+    "timeout": 10000,
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+    "maxContentLength": -1,
+    "maxBodyLength": -1,
+    "env": {},
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "X-API-KEY": "",
+      "User-Agent": "axios/1.9.0",
+      "Content-Length": "139",
+      "Accept-Encoding": "gzip, compress, deflate, br"
+    },
+    "baseURL": "https://undefined/api/admin/v5",
+    "method": "post",
+    "url": "/orders/orders/search",
+    "data": "{\"params\":{\"orderPrepaidStatus\":\"unpaid\",\"ordersStatuses\":[\"finished\",\"ready\",\"payment_waiting\",\"new\"]},\"resultsPage\":0,\"resultsLimit\":100}",
+    "allowAbsoluteUrls": true
+  },
+  "code": "ENOTFOUND"
+}
+[2025-05-01T22:26:24.932Z] [ERROR] Błąd podczas wykonywania getOrders po 125.21ms
+{
+  "message": "getaddrinfo ENOTFOUND undefined",
+  "name": "Error",
+  "stack": "Error: getaddrinfo ENOTFOUND undefined\n    at Function.AxiosError.from (/Users/oliwier/Desktop/Projects/zadanie-rekrutacyjne-IdoMods/server/node_modules/axios/lib/core/AxiosError.js:92:14)\n    at RedirectableRequest.handleRequestError (/Users/oliwier/Desktop/Projects/zadanie-rekrutacyjne-IdoMods/server/node_modules/axios/lib/adapters/http.js:620:25)\n    at RedirectableRequest.emit (node:events:526:35)\n    at RedirectableRequest.emit (node:domain:489:12)\n    at ClientRequest.eventHandlers.<computed> (/Users/oliwier/Desktop/Projects/zadanie-rekrutacyjne-IdoMods/server/node_modules/follow-redirects/index.js:49:24)\n    at ClientRequest.emit (node:events:514:28)\n    at ClientRequest.emit (node:domain:489:12)\n    at TLSSocket.socketErrorListener (node:_http_client:495:9)\n    at TLSSocket.emit (node:events:514:28)\n    at TLSSocket.emit (node:domain:489:12)\n    at Axios.request (/Users/oliwier/Desktop/Projects/zadanie-rekrutacyjne-IdoMods/server/node_modules/axios/lib/core/Axios.js:45:41)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /Users/oliwier/Desktop/Projects/zadanie-rekrutacyjne-IdoMods/server/src/services/idoSellService.ts:42:26\n    at async logExecutionTime (/Users/oliwier/Desktop/Projects/zadanie-rekrutacyjne-IdoMods/server/src/utils/logUtils.ts:106:20)\n    at async OrderScheduler.fetchOrders (/Users/oliwier/Desktop/Projects/zadanie-rekrutacyjne-IdoMods/server/src/schedulers/orderScheduler.ts:49:22)",
+  "config": {
+    "transitional": {
+      "silentJSONParsing": true,
+      "forcedJSONParsing": true,
+      "clarifyTimeoutError": false
+    },
+    "adapter": [
+      "xhr",
+      "http",
+      "fetch"
+    ],
+    "transformRequest": [
+      null
+    ],
+    "transformResponse": [
+      null
+    ],
+    "timeout": 10000,
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+    "maxContentLength": -1,
+    "maxBodyLength": -1,
+    "env": {},
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "X-API-KEY": "",
+      "User-Agent": "axios/1.9.0",
+      "Content-Length": "139",
+      "Accept-Encoding": "gzip, compress, deflate, br"
+    },
+    "baseURL": "https://undefined/api/admin/v5",
+    "method": "post",
+    "url": "/orders/orders/search",
+    "data": "{\"params\":{\"orderPrepaidStatus\":\"unpaid\",\"ordersStatuses\":[\"finished\",\"ready\",\"payment_waiting\",\"new\"]},\"resultsPage\":0,\"resultsLimit\":100}",
+    "allowAbsoluteUrls": true
+  },
+  "code": "ENOTFOUND"
+}
+[2025-05-01T22:29:17.851Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T22:29:17.852Z] [INFO] Wykonano getOrders controller w czasie 1.51ms
+[2025-05-01T22:29:17.855Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T22:29:17.856Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T22:29:17.858Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T22:29:17.858Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.56ms
+[2025-05-01T22:29:17.860Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T22:29:17.860Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T22:29:17.861Z] [INFO] Wykonano refreshOrders controller w czasie 0.59ms
