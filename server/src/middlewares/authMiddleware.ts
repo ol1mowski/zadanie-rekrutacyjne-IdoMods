@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { config } from '../config';
+import { config } from '../config/config';
 
 export const basicAuth = (req: Request, res: Response, next: NextFunction) => {
   const authHeader = req.headers.authorization;

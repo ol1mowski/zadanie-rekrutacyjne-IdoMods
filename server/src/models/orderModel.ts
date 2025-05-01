@@ -1,38 +1,38 @@
-import fs from 'fs';
 import path from 'path';
 import { ProcessedOrder, OrderFilterParams } from '../types/idoSell';
+import {
+  saveJsonToFile,
+  loadJsonFromFile,
+  acquireFileLock,
+  ordersToCSV,
+  orderToDetailedCSV,
+  hasOrderChanged,
+  logError,
+  logInfo,
+  logDebug,
+  logExecutionTime
+} from '../utils';
 
 class OrderModel {
   private dbFilePath: string;
+  private lockFilePath: string;
   private orders: ProcessedOrder[] = [];
   private initialized: boolean = false;
 
   constructor() {
     this.dbFilePath = path.join(__dirname, '../../data/orders.json');
-    this.ensureDirectoryExists();
-  }
-
-  private ensureDirectoryExists(): void {
-    const dataDir = path.dirname(this.dbFilePath);
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
-    }
+    this.lockFilePath = path.join(__dirname, '../../data/orders.lock');
   }
 
   async init(): Promise<void> {
     if (this.initialized) return;
-    
+
     try {
-      if (fs.existsSync(this.dbFilePath)) {
-        const data = fs.readFileSync(this.dbFilePath, 'utf8');
-        this.orders = JSON.parse(data);
-      } else {
-        this.orders = [];
-        await this.saveToFile();
-      }
+      this.orders = await loadJsonFromFile<ProcessedOrder[]>(this.dbFilePath, []);
       this.initialized = true;
+      logDebug(`Zainicjalizowano model zamówień. Wczytano ${this.orders.length} zamówień.`);
     } catch (error) {
-      console.error('Błąd podczas inicjalizacji modelu zamówień:', error);
+      logError('Błąd podczas inicjalizacji modelu zamówień:', error);
       this.orders = [];
       this.initialized = true;
     }
@@ -40,91 +40,98 @@ class OrderModel {
 
   private async saveToFile(): Promise<void> {
     try {
-      fs.writeFileSync(this.dbFilePath, JSON.stringify(this.orders, null, 2));
+      const releaseLock = await acquireFileLock(this.lockFilePath);
+
+      try {
+        await saveJsonToFile(this.dbFilePath, this.orders);
+        logDebug(`Zapisano ${this.orders.length} zamówień do pliku.`);
+      } finally {
+        releaseLock();
+      }
     } catch (error) {
-      console.error('Błąd podczas zapisywania zamówień do pliku:', error);
+      logError('Błąd podczas zapisywania zamówień do pliku:', error);
       throw error;
     }
   }
 
-  async updateOrders(newOrders: ProcessedOrder[]): Promise<void> {
-    await this.init();
-    
-    for (const newOrder of newOrders) {
-      const existingOrderIndex = this.orders.findIndex(order => order.orderID === newOrder.orderID);
-      
-      if (existingOrderIndex !== -1) {
-        this.orders[existingOrderIndex] = {
-          ...newOrder,
-          date: new Date().toISOString()
-        };
-      } else {
-        this.orders.push({
-          ...newOrder,
-          date: new Date().toISOString()
-        });
+  async updateOrders(newOrders: ProcessedOrder[]): Promise<{ updated: number, unchanged: number, added: number }> {
+    return await logExecutionTime('updateOrders', async () => {
+      await this.init();
+
+      let updated = 0;
+      let unchanged = 0;
+      let added = 0;
+
+      for (const newOrder of newOrders) {
+        const existingOrderIndex = this.orders.findIndex(order => order.orderID === newOrder.orderID);
+
+        if (existingOrderIndex !== -1) {
+          const existingOrder = this.orders[existingOrderIndex];
+
+          if (hasOrderChanged(existingOrder, newOrder)) {
+            this.orders[existingOrderIndex] = {
+              ...newOrder,
+              date: new Date().toISOString()
+            };
+            updated++;
+          } else {
+            unchanged++;
+          }
+        } else {
+          this.orders.push({
+            ...newOrder,
+            date: new Date().toISOString()
+          });
+          added++;
+        }
       }
-    }
-    
-    await this.saveToFile();
+
+      if (updated > 0 || added > 0) {
+        await this.saveToFile();
+        logInfo(`Zaktualizowano bazę zamówień. Dodano: ${added}, zaktualizowano: ${updated}, bez zmian: ${unchanged}`);
+      } else {
+        logInfo(`Brak zmian w bazie zamówień. Sprawdzono ${newOrders.length} zamówień.`);
+      }
+
+      return { updated, unchanged, added };
+    });
   }
 
   async getOrders(filter?: OrderFilterParams): Promise<ProcessedOrder[]> {
     await this.init();
-    
+
     if (!filter) {
       return this.orders;
     }
-    
+
     return this.orders.filter(order => {
       const { minWorth, maxWorth } = filter;
-      
+
       if (minWorth !== undefined && order.orderWorth < minWorth) {
         return false;
       }
-      
+
       if (maxWorth !== undefined && order.orderWorth > maxWorth) {
         return false;
       }
-      
+
       return true;
     });
   }
 
   async getOrderById(orderID: string): Promise<ProcessedOrder | null> {
     await this.init();
-    
+
     const order = this.orders.find(order => order.orderID === orderID);
     return order || null;
   }
 
   ordersToCSV(orders: ProcessedOrder[]): string {
-    let csv = 'OrderID,OrderWorth,ProductsCount,ProductIDs,ProductQuantities,Date\n';
-    
-    for (const order of orders) {
-      const productIDs = order.products.map(p => p.productID).join(';');
-      const productQuantities = order.products.map(p => p.quantity).join(';');
-      
-      csv += `${order.orderID},${order.orderWorth},${order.products.length},${productIDs},${productQuantities},${order.date || ''}\n`;
-    }
-    
-    return csv;
+    return ordersToCSV(orders);
   }
 
   orderToDetailedCSV(order: ProcessedOrder): string {
-    if (!order) return '';
-    
-    let csv = `Zamówienie: ${order.orderID}\n`;
-    csv += `Wartość zamówienia: ${order.orderWorth}\n`;
-    csv += `Data aktualizacji: ${order.date || ''}\n\n`;
-    
-    csv += 'ProductID,Quantity\n';
-    
-    for (const product of order.products) {
-      csv += `${product.productID},${product.quantity}\n`;
-    }
-    
-    return csv;
+    return orderToDetailedCSV(order);
   }
 }
 

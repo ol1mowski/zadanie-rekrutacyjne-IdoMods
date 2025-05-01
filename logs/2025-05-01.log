@@ -1,0 +1,255 @@
+[2025-05-01T21:02:52.665Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T21:02:52.668Z] [INFO] Wykonano getOrders controller w czasie 2.96ms
+[2025-05-01T21:02:52.672Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T21:02:52.676Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T21:02:52.680Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T21:02:52.680Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.90ms
+[2025-05-01T21:02:52.684Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T21:02:52.685Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T21:02:52.686Z] [INFO] Wykonano refreshOrders controller w czasie 1.56ms
+[2025-05-01T21:05:50.285Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T21:05:50.288Z] [INFO] Wykonano getOrders controller w czasie 2.50ms
+[2025-05-01T21:05:50.292Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T21:05:50.296Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T21:05:50.299Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T21:05:50.300Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.84ms
+[2025-05-01T21:05:50.304Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T21:05:50.304Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T21:05:50.305Z] [INFO] Wykonano refreshOrders controller w czasie 1.78ms
+[2025-05-01T21:05:53.644Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T21:05:53.647Z] [INFO] Wykonano getOrders controller w czasie 2.74ms
+[2025-05-01T21:05:53.651Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T21:05:53.655Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T21:05:53.659Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T21:05:53.660Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.81ms
+[2025-05-01T21:05:53.665Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T21:05:53.665Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T21:05:53.666Z] [INFO] Wykonano refreshOrders controller w czasie 1.54ms
+[2025-05-01T21:07:16.732Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T21:07:16.734Z] [INFO] Wykonano getOrders controller w czasie 2.26ms
+[2025-05-01T21:07:16.737Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T21:07:16.742Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T21:07:16.746Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T21:07:16.747Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.91ms
+[2025-05-01T21:07:16.750Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T21:07:16.751Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T21:07:16.752Z] [INFO] Wykonano refreshOrders controller w czasie 1.35ms
+[2025-05-01T21:08:47.606Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T21:08:47.608Z] [INFO] Wykonano getOrders controller w czasie 2.36ms
+[2025-05-01T21:08:47.612Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T21:08:47.616Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T21:08:47.620Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T21:08:47.621Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.92ms
+[2025-05-01T21:08:47.625Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T21:08:47.625Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T21:08:47.626Z] [INFO] Wykonano refreshOrders controller w czasie 1.43ms
+[2025-05-01T21:09:28.508Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T21:09:28.510Z] [INFO] Wykonano getOrders controller w czasie 2.58ms
+[2025-05-01T21:09:28.514Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T21:09:28.518Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T21:09:28.522Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T21:09:28.523Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.86ms
+[2025-05-01T21:09:28.528Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T21:09:28.528Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T21:09:28.529Z] [INFO] Wykonano refreshOrders controller w czasie 1.40ms
+[2025-05-01T21:09:50.844Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T21:09:50.847Z] [INFO] Wykonano getOrders controller w czasie 2.49ms
+[2025-05-01T21:09:50.850Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T21:09:50.854Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T21:09:50.858Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T21:09:50.858Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.78ms
+[2025-05-01T21:09:50.862Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T21:09:50.863Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T21:09:50.864Z] [INFO] Wykonano refreshOrders controller w czasie 1.47ms
+[2025-05-01T21:09:53.357Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T21:09:53.360Z] [INFO] Wykonano getOrders controller w czasie 2.42ms
+[2025-05-01T21:09:53.364Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T21:09:53.368Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T21:09:53.371Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T21:09:53.372Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.90ms
+[2025-05-01T21:09:53.376Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T21:09:53.376Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T21:09:53.377Z] [INFO] Wykonano refreshOrders controller w czasie 1.35ms
+[2025-05-01T21:10:11.150Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T21:10:11.153Z] [INFO] Wykonano getOrders controller w czasie 2.72ms
+[2025-05-01T21:10:11.158Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T21:10:11.162Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T21:10:11.166Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T21:10:11.167Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.96ms
+[2025-05-01T21:10:11.171Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T21:10:11.171Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T21:10:11.172Z] [INFO] Wykonano refreshOrders controller w czasie 1.32ms
+[2025-05-01T21:10:16.041Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T21:10:16.043Z] [INFO] Wykonano getOrders controller w czasie 2.38ms
+[2025-05-01T21:10:16.047Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T21:10:16.051Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T21:10:16.055Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T21:10:16.056Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.85ms
+[2025-05-01T21:10:16.060Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T21:10:16.060Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T21:10:16.061Z] [INFO] Wykonano refreshOrders controller w czasie 1.40ms
+[2025-05-01T21:19:18.846Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T21:19:18.849Z] [INFO] Wykonano getOrders controller w czasie 2.51ms
+[2025-05-01T21:19:18.853Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T21:19:18.856Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T21:19:18.860Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T21:19:18.861Z] [INFO] Wykonano getOrdersCSV controller w czasie 1.05ms
+[2025-05-01T21:19:18.865Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T21:19:18.866Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T21:19:18.867Z] [INFO] Wykonano refreshOrders controller w czasie 1.42ms
+[2025-05-01T21:20:14.676Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T21:20:14.679Z] [INFO] Wykonano getOrders controller w czasie 2.60ms
+[2025-05-01T21:20:14.682Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T21:20:14.686Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T21:20:14.690Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T21:20:14.691Z] [INFO] Wykonano getOrdersCSV controller w czasie 1.08ms
+[2025-05-01T21:20:14.695Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T21:20:14.696Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T21:20:14.697Z] [INFO] Wykonano refreshOrders controller w czasie 1.35ms
+[2025-05-01T21:21:51.036Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T21:21:51.038Z] [INFO] Wykonano getOrders controller w czasie 2.28ms
+[2025-05-01T21:21:51.042Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T21:21:51.046Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T21:21:51.050Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T21:21:51.051Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.87ms
+[2025-05-01T21:21:51.054Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T21:21:51.055Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T21:21:51.056Z] [INFO] Wykonano refreshOrders controller w czasie 1.56ms
+[2025-05-01T21:23:14.705Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T21:23:14.707Z] [INFO] Wykonano getOrders controller w czasie 2.34ms
+[2025-05-01T21:23:14.710Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T21:23:14.714Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T21:23:14.718Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T21:23:14.719Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.85ms
+[2025-05-01T21:23:14.723Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T21:23:14.723Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T21:23:14.724Z] [INFO] Wykonano refreshOrders controller w czasie 1.24ms
+[2025-05-01T21:24:01.144Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T21:24:01.147Z] [INFO] Wykonano getOrders controller w czasie 2.50ms
+[2025-05-01T21:24:01.151Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T21:24:01.154Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T21:24:01.158Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T21:24:01.158Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.79ms
+[2025-05-01T21:24:01.163Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T21:24:01.163Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T21:24:01.164Z] [INFO] Wykonano refreshOrders controller w czasie 1.49ms
+[2025-05-01T21:24:27.321Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T21:24:27.324Z] [INFO] Wykonano getOrders controller w czasie 2.45ms
+[2025-05-01T21:24:27.328Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T21:24:27.332Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T21:24:27.336Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T21:24:27.337Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.93ms
+[2025-05-01T21:24:27.341Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T21:24:27.342Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T21:24:27.343Z] [INFO] Wykonano refreshOrders controller w czasie 1.58ms
+[2025-05-01T21:28:35.345Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-01T21:28:35.348Z] [INFO] Wykonano getOrders controller w czasie 2.68ms
+[2025-05-01T21:28:35.353Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-01T21:28:35.357Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-01T21:28:35.362Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-01T21:28:35.363Z] [INFO] Wykonano getOrdersCSV controller w czasie 1.12ms
+[2025-05-01T21:28:35.367Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-01T21:28:35.368Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-01T21:28:35.369Z] [INFO] Wykonano refreshOrders controller w czasie 1.83ms

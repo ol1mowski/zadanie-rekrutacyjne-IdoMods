@@ -1,20 +1,23 @@
 import { scheduleJob } from 'node-schedule';
 import idoSellService from '../services/idoSellService';
 import orderModel from '../models/orderModel';
-import { config } from '../config';
+import { config } from '../config/config';
 
 class OrderScheduler {
   private job: any;
   private isInitialFetchDone: boolean = false;
 
   initialize(): void {
+    const initTime = new Date();
+    console.log(`[${initTime.toISOString()}] Inicjalizacja harmonogramu zadań o ${initTime.toLocaleTimeString()}...`);
+    
     if (!this.isInitialFetchDone) {
       orderModel.getOrders().then(orders => {
         if (orders.length === 0) {
-          console.log('Brak danych w bazie. Wykonuję początkowe pobieranie...');
+          console.log(`[${new Date().toISOString()}] Brak danych w bazie. Wykonuję początkowe pobieranie...`);
           this.fetchOrders();
         } else {
-          console.log(`Znaleziono ${orders.length} zamówień w bazie. Pomijam początkowe pobieranie.`);
+          console.log(`[${new Date().toISOString()}] Znaleziono ${orders.length} zamówień w bazie. Pomijam początkowe pobieranie.`);
         }
         this.isInitialFetchDone = true;
       });
@@ -29,30 +32,38 @@ class OrderScheduler {
       
       if (this.job && this.job.nextInvocation) {
         const nextRun = this.job.nextInvocation();
-        console.log(`Następne zaplanowane uruchomienie: ${nextRun}`);
+        console.log(`[${new Date().toISOString()}] Następne zaplanowane uruchomienie: ${nextRun.toLocaleString()}`);
       }
     } else {
-      console.log('Scheduler jest wyłączony w konfiguracji.');
+      console.log(`[${new Date().toISOString()}] Scheduler jest wyłączony w konfiguracji.`);
     }
     
-    console.log('Harmonogram zadań zainicjalizowany pomyślnie.');
+    console.log(`[${new Date().toISOString()}] Harmonogram zadań zainicjalizowany pomyślnie.`);
   }
 
   async fetchOrders(): Promise<void> {
     try {
-      console.log(`[${new Date().toISOString()}] Rozpoczęcie pobierania zamówień z API idoSell...`);
+      const startTime = new Date();
+      console.log(`[${startTime.toISOString()}] Rozpoczęcie pobierania zamówień z API idoSell...`);
       
       const orders = await idoSellService.getOrders();
       
-      console.log(`[${new Date().toISOString()}] Pobrano ${orders.length} zamówień. Aktualizacja bazy danych...`);
+      console.log(`[${new Date().toISOString()}] Pobrano ${orders.length} zamówień. Sprawdzanie zmian...`);
       
-      await orderModel.updateOrders(orders);
+      const updateResult = await orderModel.updateOrders(orders);
       
-      console.log(`[${new Date().toISOString()}] Zamówienia zostały pomyślnie zaktualizowane w bazie danych.`);
+      const endTime = new Date();
+      const executionTimeMs = endTime.getTime() - startTime.getTime();
+      
+      if (updateResult.updated > 0 || updateResult.added > 0) {
+        console.log(`[${endTime.toISOString()}] Aktualizacja danych zakończona o ${endTime.toLocaleTimeString()}. Czas wykonania: ${executionTimeMs}ms. Dodano nowych: ${updateResult.added}, zaktualizowano zmienionych: ${updateResult.updated}, bez zmian: ${updateResult.unchanged}.`);
+      } else {
+        console.log(`[${endTime.toISOString()}] Zakończono sprawdzanie o ${endTime.toLocaleTimeString()}. Czas wykonania: ${executionTimeMs}ms. Brak zmian w danych - nie wykonano aktualizacji. Sprawdzono zamówień: ${orders.length}.`);
+      }
       
       if (this.job && this.job.nextInvocation) {
         const nextRun = this.job.nextInvocation();
-        console.log(`Następne zaplanowane uruchomienie: ${nextRun}`);
+        console.log(`Następne zaplanowane uruchomienie: ${nextRun.toLocaleString()}`);
       }
     } catch (error) {
       console.error(`[${new Date().toISOString()}] Błąd podczas pobierania i aktualizacji zamówień:`, error);
@@ -62,7 +73,8 @@ class OrderScheduler {
   stop(): void {
     if (this.job) {
       this.job.cancel();
-      console.log('Zadanie schedulera zostało zatrzymane.');
+      const stopTime = new Date();
+      console.log(`[${stopTime.toISOString()}] Zadanie schedulera zostało zatrzymane o ${stopTime.toLocaleTimeString()}.`);
     }
   }
   updateSchedule(cronExpression: string): void {
@@ -70,17 +82,19 @@ class OrderScheduler {
       this.job.cancel();
     }
     
-    console.log(`Aktualizacja harmonogramu z nowym wyrażeniem cron: ${cronExpression}`);
+    const updateTime = new Date();
+    console.log(`[${updateTime.toISOString()}] Aktualizacja harmonogramu o ${updateTime.toLocaleTimeString()} z nowym wyrażeniem cron: ${cronExpression}`);
+    
     this.job = scheduleJob(cronExpression, async () => {
       console.log(`[${new Date().toISOString()}] Uruchomiono zadanie według zaktualizowanego harmonogramu...`);
       await this.fetchOrders();
     });
     
-    console.log('Harmonogram został zaktualizowany pomyślnie.');
+    console.log(`[${new Date().toISOString()}] Harmonogram został zaktualizowany pomyślnie.`);
     
     if (this.job && this.job.nextInvocation) {
       const nextRun = this.job.nextInvocation();
-      console.log(`Następne zaplanowane uruchomienie: ${nextRun}`);
+      console.log(`Następne zaplanowane uruchomienie: ${nextRun.toLocaleString()}`);
     }
   }
 }
