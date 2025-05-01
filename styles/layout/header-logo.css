@@ -1,0 +1,63 @@
+.left-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-img {
+    width: 20px;
+    height: 20px;
+}
+
+.logo-text {
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.logo-subtitle {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+}
+
+.code-tag {
+    margin-left: 2px;
+}
+
+/* Informacje o użytkowniku */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.user-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.user-role {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Wersja mobilna */
+@media (max-width: 1020px) {
+    .user-info {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-subtitle {
+        display: none;
+    }
+} 
