@@ -11,6 +11,14 @@ function initProductPopup() {
     // Funkcja otwierająca pop-up
     window.openProductPopup = function(imageSrc, productId) {
         popupImage.src = imageSrc;
+        popupImage.alt = `Szczegółowy widok produktu ${productId}`;
+        popupImage.loading = "lazy";
+        
+        // Dodajemy obsługę srcset dla responsywnych obrazów
+        const originalImage = imageSrc;
+        popupImage.srcset = `${originalImage} 800w, ${originalImage} 1200w`;
+        popupImage.sizes = "(max-width: 768px) 100vw, 80vw";
+        
         popupId.textContent = `ID: ${productId}`;
         popup.classList.add('active');
         overlay.classList.add('active');
