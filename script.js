@@ -391,6 +391,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const productElement = document.createElement('div');
         productElement.className = 'product-card';
         productElement.dataset.id = product.id;
+        productElement.dataset.image = product.image;
+        productElement.dataset.formattedIndex = formattedIndex;
         
         const productHtml = `
             <div class="product-image-container">
@@ -411,6 +413,11 @@ document.addEventListener('DOMContentLoaded', function() {
         favoriteBtn.addEventListener('click', function(e) {
             e.stopPropagation(); // Zatrzymanie propagacji, aby nie wywoływać kliknięcia na całej karcie
             this.classList.toggle('active');
+        });
+        
+        // Dodanie obsługi kliknięcia na kartę produktu - otwieranie pop-upu
+        productElement.addEventListener('click', function() {
+            openProductPopup(product.image, formattedIndex);
         });
         
         return productElement;
@@ -546,6 +553,49 @@ document.addEventListener('DOMContentLoaded', function() {
     function initializeLazyLoading() {
         // Funkcja intencjonalnie pozostawiona pusta - nie chcemy automatycznego ładowania
     }
+    
+    // Obsługa pop-upu produktu
+    function initializeProductPopup() {
+        const popup = document.getElementById('product-popup');
+        const overlay = document.getElementById('popup-overlay');
+        const closeBtn = document.getElementById('popup-close');
+        const popupImage = document.getElementById('popup-product-image');
+        const popupId = document.getElementById('popup-product-id');
+        
+        if (!popup || !overlay || !closeBtn || !popupImage || !popupId) return;
+        
+        // Funkcja otwierająca pop-up
+        window.openProductPopup = function(imageSrc, productId) {
+            popupImage.src = imageSrc;
+            popupId.textContent = `ID: ${productId}`;
+            popup.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Blokada przewijania strony
+        };
+        
+        // Funkcja zamykająca pop-up
+        function closeProductPopup() {
+            popup.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = ''; // Przywrócenie przewijania strony
+        }
+        
+        // Obsługa kliknięcia przycisku zamykania
+        closeBtn.addEventListener('click', closeProductPopup);
+        
+        // Obsługa kliknięcia na overlay (tło)
+        overlay.addEventListener('click', closeProductPopup);
+        
+        // Obsługa klawisza Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && popup.classList.contains('active')) {
+                closeProductPopup();
+            }
+        });
+    }
+    
+    // Inicjalizacja funkcji dla pop-upu produktu
+    initializeProductPopup();
     
     // Inicjalizacja funkcji dla nowej sekcji produktów
     initializeDropdownSelector();

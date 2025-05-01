@@ -74,7 +74,6 @@
             </div>
         </div>
         
-        <!-- Sekcja produktów -->
         <section class="products-section" id="featured-products">
             <div class="section-header">
                 <span class="section-label">FEATURED PRODUCTS</span>
@@ -84,9 +83,7 @@
             <div class="products-container">
                 <img src="images/arrow.png" alt="scroll-left" class="products-scroll-btn scroll-left-btn" id="scroll-left-btn">
                 
-                <!-- Produkty będą dodawane dynamicznie przez JavaScript -->
                 <div class="products-wrapper" id="products-wrapper">
-                    <!-- Loader podczas ładowania produktów -->
                     <div class="loader" id="products-loader">
                         <div class="spinner"></div>
                     </div>
@@ -95,7 +92,6 @@
                 <img src="images/arrow.png" alt="scroll-right" class="products-scroll-btn scroll-right-btn" id="scroll-right-btn">
             </div>
             
-            <!-- Linia separująca na dole sekcji produktów z indykatorem przewijania -->
             <div class="section-separator-container">
                 <div class="section-separator">
                     <div class="section-separator-progress" id="scroll-progress-bar"></div>
@@ -103,7 +99,6 @@
             </div>
         </section>
         
-        <!-- Nowa sekcja produktów w siatce -->
         <section class="products-grid-section" id="product-listing">
             
             <div class="products-grid-options">
@@ -122,14 +117,11 @@
             </div>
             
             <div class="products-grid-container">
-                <!-- Loader dla produktów -->
                 <div class="loader" id="products-grid-loader">
                     <div class="spinner"></div>
                 </div>
                 
-                <!-- Tutaj będą dodawane produkty -->
                 <div class="products-grid" id="products-grid">
-                    <!-- Banner promocyjny statycznie w HTML -->
                     <div class="promo-banner">
                         <img src="images/narty.jpg" alt="Narciarz na stoku" class="promo-banner-image">
                         <div class="promo-banner-content">
@@ -144,6 +136,17 @@
             </div>
         </section>
     </main>
+
+    <div class="product-popup" id="product-popup">
+        <div class="product-popup-content">
+            <button class="popup-close" id="popup-close"><img src="./images/close.svg" alt="close" class="popup-close-icon"> CLOSE</button>
+            <span class="popup-product-id" id="popup-product-id">ID: 01</span>
+            <div class="popup-product-image-container">
+                <img src="" alt="Product details" class="popup-product-image" id="popup-product-image">
+            </div>
+        </div>
+    </div>
+    <div class="popup-overlay" id="popup-overlay"></div>
 
     <script src="script.js"></script>
 </body>
