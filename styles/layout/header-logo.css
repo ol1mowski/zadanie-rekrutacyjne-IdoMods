@@ -10,19 +10,64 @@
     gap: 0.5rem;
 }
 
+.logo div {
+    border: 1px solid var(--main-black);
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    width: 24px;
+    height: 24px;
+    box-sizing: border-box;
+    margin-right: 4px;
+    position: relative;
+}
+
+.logo div span {
+    font-weight: 600;
+    font-size: 17px;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: .8rem;
+    left: 50%;
+    transform: translate(-45%, -50%);
+}
+
 .logo-img {
     width: 20px;
     height: 20px;
 }
 
 .logo-text {
-    font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 0.5px;
 }
 
+.first-letter {
+    transition: all 0.3s ease;
+}
+
+.logo:hover .first-letter {
+    color: white;
+    text-shadow: 
+        -1px -1px 0 var(--main-black),
+        1px -1px 0 var(--main-black),
+        -1px 1px 0 var(--main-black),
+        1px 1px 0 var(--main-black);
+}
+
+.logo:hover div {
+    background-color: var(--main-black);
+}
+
+.logo:hover div span {
+    color: white;
+}
+
 .logo-subtitle {
-    font-size: 14px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     font-weight: 400;
@@ -40,12 +85,12 @@
 }
 
 .user-icon {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 
 .user-role {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
 }
 

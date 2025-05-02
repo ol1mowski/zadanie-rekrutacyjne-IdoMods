@@ -3,8 +3,8 @@
 .hero {
     display: flex;
     flex-direction: column;
-    padding-top: .7rem;
-    height: calc(100vh - 77px); /* Wysokość ekranu minus header */
+    margin-top: 2rem;
+    height: 90vh;
 }
 
 h1 {
@@ -38,8 +38,8 @@ h1 {
 /* Responsywność dla hero */
 @media (max-width: 1020px) {
     .hero {
-        height: calc(100vh - 64px);
-        padding-top: 0.5rem;
+        height: calc(100vh - 10vh);
+        padding-top: 0;
     }
     
     .full-image {
@@ -50,6 +50,6 @@ h1 {
 
 @media (max-width: 480px) {
     .hero {
-        height: calc(100vh - 56px);
+        height: calc(100vh - 10vh);
     }
 } 

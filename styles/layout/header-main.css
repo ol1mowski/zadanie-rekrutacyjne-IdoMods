@@ -2,7 +2,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.25rem 2rem;
+    height: 10vh;
+    padding: 0 2rem;
     background-color: var(--white);
     position: relative;
     z-index: 10;

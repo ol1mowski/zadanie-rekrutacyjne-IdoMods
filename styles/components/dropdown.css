@@ -5,8 +5,8 @@
 }
 
 .options-label {
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 500;
     color: var(--main-black);
     text-transform: uppercase;
 }
@@ -15,6 +15,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     cursor: pointer;
 }
@@ -25,8 +26,8 @@
 }
 
 .dropdown-arrow {
-    width: 10px;
-    height: 10px;
+    width: 24px;
+    height: 24px;
     transition: transform 0.2s ease;
     filter: brightness(0); /* Zmiana koloru strzałki na czarny */
 }
