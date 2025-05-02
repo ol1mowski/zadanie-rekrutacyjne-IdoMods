@@ -14,7 +14,22 @@ const initFeaturedProducts = () => {
     }
 
     const generateBadge = () => {
-        return { type: null, label: '' };
+        const badges = [
+            { type: 'bestseller', label: 'BESTSELLER' },
+            { type: 'limited', label: 'LIMITED EDITION' },
+            { type: null, label: '' }
+        ];
+        
+        // Losowy wybór odznaki, z większą szansą na odznakę niż brak odznaki
+        const badgeIndex = Math.floor(Math.random() * 10); // Generuje liczbę od 0 do 9
+        
+        if (badgeIndex < 4) {
+            return badges[0]; // 40% szans na bestseller
+        } else if (badgeIndex < 8) {
+            return badges[1]; // 40% szans na limited edition
+        } else {
+            return badges[2]; // 20% szans na brak odznaki
+        }
     }
 
     const generateProductName = (text) => {
@@ -46,7 +61,7 @@ const initFeaturedProducts = () => {
 
         const productHtml = `
             <div class="product-image-container">
-                ${badge.type ? `<span class="product-badge badge-${badge.type}">${badge.label}</span>` : ''}
+                ${badge.type ? `<div class="product-badge badge-${badge.type}">${badge.label}</div>` : ''}
                 <img src="${product.image}" 
                      alt="${productName}" 
                      class="product-image"

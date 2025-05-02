@@ -64,9 +64,3 @@
         /* Wartość w hero.css nadpisuje tę zmienną dla h1 poprzez media queries */
     }
 }
-
-@media (max-width: 480px) {
-    :root {
-        /* Wartość w hero.css nadpisuje tę zmienną dla h1 poprzez media queries */
-    }
-} 

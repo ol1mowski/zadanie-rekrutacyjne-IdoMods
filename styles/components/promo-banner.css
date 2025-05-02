@@ -2,10 +2,10 @@
 
 .promo-banner {
     grid-column: span 2;
-    border-radius: 0;
+    border-radius: 6px;
     overflow: hidden;
     position: relative;
-    height: 350px;
+    height: 420px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -13,14 +13,27 @@
     text-align: center;
 }
 
-.promo-banner-image {
+.promo-banner::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0) 50%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.promo-banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 96.5%;
     object-fit: cover;
     z-index: 1;
+    border-radius: 5px;
 }
 
 .promo-banner-content {
@@ -30,7 +43,8 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    z-index: 2;
+    z-index: 3;
+    /* Zwiększamy z-index, aby był ponad gradientem */
     color: var(--main-black);
     text-shadow: none;
     background: none;
@@ -39,12 +53,12 @@
 }
 
 .promo-banner-header {
-    margin-top: 1rem;
+    margin-top: 2rem;
     text-align: center;
 }
 
 .promo-banner-label {
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: var(--body-large-font-weight);
     text-transform: uppercase;
     margin-bottom: 0.25rem;
@@ -53,7 +67,7 @@
 }
 
 .promo-banner-title {
-    font-size: var(--body-large-font-size);
+    font-size: 2.5rem;
     font-weight: var(--body-large-font-weight);
     line-height: 1.2;
     max-width: 70%;
@@ -64,7 +78,7 @@
     background-color: var(--white);
     border: none;
     padding: 10px 20px;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: var(--body-font-weight);
     border-radius: 2px;
     cursor: pointer;
@@ -72,26 +86,36 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
     margin-top: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.button-arrow {
-    font-size: 1.2rem;
-    line-height: 1;
+.promo-banner-arrow {
+    width: 24px;
+    height: 24px;
 }
 
 .promo-banner-button:hover {
     background-color: var(--light-gray);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsywność dla banera promocyjnego */
+
+@media (min-width: 1200px) {
+    .promo-banner {
+        height: 450px;
+    }
+}
+
 @media (max-width: 1020px) {
     .promo-banner {
         grid-column: span 3;
         height: 400px;
     }
-    
+
     .promo-banner-title {
         max-width: 90%;
         font-size: 1.8rem;
@@ -101,27 +125,88 @@
 @media (max-width: 768px) {
     .promo-banner {
         grid-column: span 2;
-        height: 350px;
+        height: 380px;
+        text-align: center;
+        align-items: center;
     }
-    
+
+    .promo-banner::before {
+        background: linear-gradient(180deg, rgba(0, 174, 239, 0.2) 0%, rgba(0, 119, 182, 0) 100%);
+    }
+
+    .promo-banner-content {
+        align-items: center;
+        padding: 1.5rem 1.5rem 2rem 1.5rem;
+        text-align: center;
+    }
+
+    .promo-banner-header {
+        text-align: center;
+        margin-top: 1rem;
+        width: 100%;
+    }
+
     .promo-banner-title {
-        max-width: 90%;
-        font-size: var(--body-large-font-size);
+        max-width: 100%;
+        font-size: 1.6rem;
+        margin: 0;
+        text-align: center;
     }
 }
 
 @media (max-width: 480px) {
     .promo-banner {
         grid-column: span 1;
-        height: 400px;
+        height: 420px;
+        border-radius: 8px;
+        text-align: center;
     }
-    
-    .promo-banner-title {
-        max-width: 90%;
-        font-size: var(--body-large-font-size);
+
+    .promo-banner::before {
+        background: linear-gradient(180deg, rgba(0, 174, 239, 0.3) 0%, rgba(0, 119, 182, 0) 100%);
     }
-    
+
+    .promo-banner-image {
+        height: 100%;
+        border-radius: 8px;
+    }
+
     .promo-banner-content {
-        padding: 2rem 1.5rem 2.5rem 1.5rem;
+        justify-content: flex-start;
+        padding: 1.5rem;
+        text-align: left;
+        align-items: flex-start;
     }
-} 
+
+    .promo-banner-header {
+        margin-top: 1rem;
+        margin-bottom: auto;
+        text-align: center;
+        width: 100%;
+    }
+
+    .promo-banner-label {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .promo-banner-title {
+        font-size: 1.7rem;
+        line-height: 1.3;
+        margin-top: 0.25rem;
+        text-align: center;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .promo-banner-button {
+        margin-top: auto;
+        align-self: center;
+        padding: 12px 24px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border-radius: 4px;
+        background-color: white;
+    }
+}

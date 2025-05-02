@@ -78,9 +78,10 @@
       <div class="hero-image">
         <img
           src="images/hero.webp"
+          srcset="images/hero_mobile.webp 768w, images/hero.webp 1200w"
+          sizes="(max-width: 768px) 100vw, 1200px"
           alt="Wspinacz górski na skale podczas zachodu słońca"
           class="full-image"
-          id="hero-img"
           loading="lazy"
         />
       </div>
@@ -136,8 +137,9 @@
 
         <div class="products-grid" id="products-grid">
           <div class="promo-banner">
-            <img src="images/narty.webp" alt="Narciarz na stoku górskim w świetle słonecznym" class="promo-banner-image"
-              loading="lazy" sizes="(max-width: 768px) 100vw, 800px" />
+            <img src="images/baner.webp" alt="Narciarz na stoku górskim w świetle słonecznym"
+              class="promo-banner-image" loading="lazy" srcset="images/baner_mobile.webp 768w, images/baner.webp 1200w"
+              sizes="(max-width: 768px) 100vw, 800px" />
             <div class="promo-banner-content">
               <div class="promo-banner-header">
                 <span class="promo-banner-label">FORMA'SINT.</span>
@@ -146,7 +148,8 @@
                 </h3>
               </div>
               <button class="promo-banner-button">
-                CHECK THIS OUT <span class="button-arrow">›</span>
+                CHECK THIS OUT <img src="images/arrow_baner.webp" alt="Strzałka w prawo" class="promo-banner-arrow"
+                  loading="lazy" />
               </button>
             </div>
           </div>

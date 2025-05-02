@@ -22,24 +22,26 @@
 
 .product-badge {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    padding: 0.25rem 0.5rem;
-    font-size: 0.7rem;
+    top: 15px;
+    left: 15px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
-    border-radius: 2px;
+    border-radius: 50px;
     z-index: 2;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .badge-bestseller {
     background-color: var(--label-beige);
-    color: #5f5d3c;
+    color: #1d1d1d;
 }
 
 .badge-limited {
     background-color: var(--label-purple);
-    color: #5d3c5f;
+    color: #1d1d1d;
 }
 
 .product-image {
@@ -101,7 +103,7 @@
 .product-price {
     font-size: var(--body-font-size);
     font-weight: var(--body-font-weight);
-    color: #666;
+    color: var(--main-black);
 }
 
 .product-id {

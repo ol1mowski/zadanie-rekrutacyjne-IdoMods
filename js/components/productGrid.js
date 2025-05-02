@@ -127,8 +127,23 @@ const initProductGrid = () => {
         
         if (!dropdownSelector || !selectedOption || !dropdownOptions.length) return;
         
+        const updateVisibleOptions = () => {
+            const currentValue = selectedOption.textContent.trim();
+            
+            dropdownOptions.forEach(option => {
+                if (option.dataset.value === currentValue) {
+                    option.style.display = 'none';
+                } else {
+                    option.style.display = 'flex';
+                }
+            });
+        }
+        
+        updateVisibleOptions();
+        
         dropdownSelector.addEventListener('click', function(e) {
             dropdownSelector.classList.toggle('active');
+            updateVisibleOptions();
             e.stopPropagation();
         });
         
@@ -146,6 +161,8 @@ const initProductGrid = () => {
                 productsPerPage = value;
                 
                 dropdownSelector.classList.remove('active');
+                
+                updateVisibleOptions();
                 
                 loadInitialGridProducts();
             });
