@@ -1,55 +1,43 @@
-const initFeaturedProducts = () => {
-    const fetchProducts = async () => {
-        try {
-            const response = await fetch('https://brandstestowy.smallhost.pl/api/random');
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const data = await response.json();
-            return data;
-        } catch (error) {
-            console.error('Błąd podczas pobierania produktów:', error);
-            return { data: [], totalPages: 0, currentPage: 1 };
-        }
-    }
+import { fetchProducts } from '../utils/apiUtils.js';
+import { showLoader, hideLoader } from '../utils/domUtils.js';
 
-    const generateBadge = () => {
-        const badges = [
+const initFeaturedProducts = () => {
+    const productData = {
+        badges: [
             { type: 'bestseller', label: 'BESTSELLER' },
             { type: 'limited', label: 'LIMITED EDITION' },
             { type: null, label: '' }
-        ];
-        
-        // Losowy wybór odznaki, z większą szansą na odznakę niż brak odznaki
-        const badgeIndex = Math.floor(Math.random() * 10); // Generuje liczbę od 0 do 9
-        
+        ],
+        colors: ['Dark blue', 'Orange', 'Grey', 'Green', 'Black', 'Red', 'Navy'],
+        products: ['alpine climbing jacket', 'helmet for alpine TOUNDRA', 'climbing shoes', 'harness'],
+        prices: ['300,00', '250,00', '199,99', '349,00', '399,00']
+    };
+
+    const generateBadge = () => {
+        const badgeIndex = Math.floor(Math.random() * 10);
+
         if (badgeIndex < 4) {
-            return badges[0]; // 40% szans na bestseller
+            return productData.badges[0];
         } else if (badgeIndex < 8) {
-            return badges[1]; // 40% szans na limited edition
+            return productData.badges[1];
         } else {
-            return badges[2]; // 20% szans na brak odznaki
+            return productData.badges[2];
         }
-    }
+    };
 
-    const generateProductName = (text) => {
-        const colors = ['Dark blue', 'Orange', 'Grey', 'Green', 'Black', 'Red', 'Navy'];
-        const products = ['alpine climbing jacket', 'helmet for alpine TOUNDRA', 'climbing shoes', 'harness'];
-
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        const product = products[Math.floor(Math.random() * products.length)];
-
+    const generateProductName = () => {
+        const color = productData.colors[Math.floor(Math.random() * productData.colors.length)];
+        const product = productData.products[Math.floor(Math.random() * productData.products.length)];
         return `${color} ${product}`;
-    }
+    };
 
     const generatePrice = () => {
-        const prices = ['300,00', '250,00', '199,99', '349,00', '399,00'];
-        return prices[Math.floor(Math.random() * prices.length)];
-    }
+        return productData.prices[Math.floor(Math.random() * productData.prices.length)];
+    };
 
     const createProductElement = (product) => {
         const badge = generateBadge();
-        const productName = generateProductName(product.text);
+        const productName = generateProductName();
         const price = generatePrice();
 
         const productElement = document.createElement('div');
@@ -81,28 +69,28 @@ const initFeaturedProducts = () => {
         productElement.innerHTML = productHtml;
 
         const favoriteBtn = productElement.querySelector('.product-favorite');
-        favoriteBtn.addEventListener('click', function (e) {
+        favoriteBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            this.classList.toggle('active');
+            e.currentTarget.classList.toggle('active');
         });
 
         return productElement;
-    }
+    };
 
     const loadProducts = async () => {
         const productsWrapper = document.getElementById('products-wrapper');
         const loader = document.getElementById('products-loader');
         const scrollProgressBar = document.getElementById('scroll-progress-bar');
 
+        if (!productsWrapper || !loader) return;
+
+        showLoader(loader);
+
         try {
-            loader.style.display = 'flex';
-
             const productsData = await fetchProducts();
-
-            loader.style.display = 'none';
+            hideLoader(loader);
 
             productsWrapper.innerHTML = '';
-
 
             let productsToRender = [...productsData.data];
             if (productsToRender.length < 8) {
@@ -133,10 +121,10 @@ const initFeaturedProducts = () => {
 
         } catch (error) {
             console.error('Błąd podczas ładowania produktów:', error);
-            loader.style.display = 'none';
+            hideLoader(loader);
             productsWrapper.innerHTML = '<p class="error-message">Nie udało się załadować produktów. Spróbuj ponownie później.</p>';
         }
-    }
+    };
 
     const setupScrolling = () => {
         const scrollLeftBtn = document.getElementById('scroll-left-btn');
@@ -163,18 +151,14 @@ const initFeaturedProducts = () => {
                 scrollRightBtn.style.display = 'flex';
             }
 
-            if (scrollProgressBar) {
+            if (scrollProgressBar && maxScrollLeft > 0) {
                 const scrollRatio = productsWrapper.scrollLeft / maxScrollLeft;
-
                 const scaledPercentage = initialProgressValue + (scrollRatio * (100 - initialProgressValue));
-
                 scrollProgressBar.style.width = scaledPercentage + '%';
             }
-        }
+        };
 
-        window.addEventListener('resize', function () {
-            updateScrollButtons();
-        });
+        window.addEventListener('resize', updateScrollButtons);
 
         scrollLeftBtn.style.display = 'none';
 
@@ -184,17 +168,16 @@ const initFeaturedProducts = () => {
 
         updateScrollButtons();
 
-        scrollLeftBtn.addEventListener('click', function () {
+        scrollLeftBtn.addEventListener('click', () => {
             const cardWidth = productsWrapper.querySelector('.product-card').offsetWidth;
             const gapWidth = 24;
             const scrollAmount = cardWidth + gapWidth;
 
             const targetPosition = Math.max(0, productsWrapper.scrollLeft - scrollAmount);
-
             productsWrapper.scrollTo({ left: targetPosition, behavior: 'smooth' });
         });
 
-        scrollRightBtn.addEventListener('click', function () {
+        scrollRightBtn.addEventListener('click', () => {
             const cardWidth = productsWrapper.querySelector('.product-card').offsetWidth;
             const gapWidth = 24;
             const scrollAmount = cardWidth + gapWidth;
@@ -207,10 +190,10 @@ const initFeaturedProducts = () => {
             productsWrapper.scrollTo({ left: targetPosition, behavior: 'smooth' });
         });
 
-        productsWrapper.addEventListener('scroll', function () {
-            updateScrollButtons();
-        });
-    }
+        productsWrapper.addEventListener('scroll', updateScrollButtons);
+    };
 
     loadProducts();
-} 
+};
+
+export default initFeaturedProducts; 

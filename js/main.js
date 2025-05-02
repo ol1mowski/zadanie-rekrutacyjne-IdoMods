@@ -1,33 +1,31 @@
-// Główny plik JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-    // Inicjalizacja komponentów nagłówka i menu mobilnego
-    initHeader();
-    initMobileMenu();
-    
-    // Inicjalizacja sekcji produktów
-    initFeaturedProducts();
-    initProductGrid();
-    initProductPopup();
-});
+import initMobileMenu from './components/mobileMenu.js';
+import initFeaturedProducts from './components/featuredProducts.js';
+import initProductGrid from './components/productGrid.js';
+import initProductPopup from './components/productPopup.js';
 
-// Importy modułów
-function initHeader() {
-    const header = document.querySelector('header');
-    const body = document.body;
-    
-    // Funkcja do obsługi sticky header
-    function handleStickyHeader() {
-        const scrollY = window.scrollY;
-        // Zmień wartość 100 na wysokość, po której header ma stać się sticky
-        if (scrollY > 100) {
-            header.classList.add('sticky');
-            body.classList.add('has-sticky-header');
-        } else {
-            header.classList.remove('sticky');
-            body.classList.remove('has-sticky-header');
-        }
+const initHeader = () => {
+  const header = document.querySelector('header');
+  const body = document.body;
+
+  const handleStickyHeader = () => {
+    const scrollY = window.scrollY;
+    if (scrollY > 100) {
+      header.classList.add('sticky');
+      body.classList.add('has-sticky-header');
+    } else {
+      header.classList.remove('sticky');
+      body.classList.remove('has-sticky-header');
     }
-    
-    // Nasłuchiwanie zdarzenia przewijania dla sticky header
-    window.addEventListener('scroll', handleStickyHeader);
-} 
+  };
+
+  window.addEventListener('scroll', handleStickyHeader);
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  initHeader();
+  initMobileMenu();
+  
+  initFeaturedProducts();
+  initProductGrid();
+  initProductPopup();
+}); 

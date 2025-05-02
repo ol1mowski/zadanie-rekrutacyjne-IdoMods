@@ -1,25 +1,19 @@
-const initProductGrid = () => {
-    let currentPage = 1;
-    let productsPerPage = 14;
+import { fetchProducts } from '../utils/apiUtils.js';
+import { formatIndex, isMobile, showLoader, hideLoader } from '../utils/domUtils.js';
 
-    let isMobileView = window.innerWidth <= 768;
-    
-    const fetchProductsForGrid = async (pageNumber, pageSize) => {
-        try {
-            const url = `https://brandstestowy.smallhost.pl/api/random?pageNumber=${pageNumber}&pageSize=${pageSize}`;
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return await response.json();
-        } catch (error) {
-            console.error('Błąd podczas pobierania produktów:', error);
-            return { data: [], totalPages: 0, currentPage: pageNumber };
-        }
-    }
-    
+
+const initProductGrid = () => {
+
+    const state = {
+        currentPage: 1,
+        productsPerPage: 14,
+        isMobileView: isMobile(),
+        isLoading: false,
+        hasMoreProducts: false
+    };
+
     const createProductElementForGrid = (product, index) => {
-        const formattedIndex = (index + 1).toString().padStart(2, '0');
+        const formattedIndex = formatIndex(index);
         
         const productElement = document.createElement('div');
         productElement.className = 'product-card';
@@ -59,7 +53,7 @@ const initProductGrid = () => {
         });
         
         return productElement;
-    }
+    };
     
     const loadInitialGridProducts = async () => {
         const productsGrid = document.getElementById('products-grid');
@@ -67,7 +61,7 @@ const initProductGrid = () => {
         
         if (!productsGrid || !loader) return;
         
-        currentPage = 1;
+        state.currentPage = 1;
         
         const promoBanner = productsGrid.querySelector('.promo-banner');
         productsGrid.innerHTML = '';
@@ -76,21 +70,24 @@ const initProductGrid = () => {
             productsGrid.appendChild(promoBanner);
         }
         
-        hasMoreProducts = false;
+        state.hasMoreProducts = false;
         
-        loader.style.display = 'flex';
+        showLoader(loader);
         
         try {
-            isLoading = true;
+            state.isLoading = true;
             
-            const productsData = await fetchProductsForGrid(currentPage, productsPerPage);
+            const productsData = await fetchProducts({
+                pageNumber: state.currentPage,
+                pageSize: state.productsPerPage
+            });
             
-            loader.style.display = 'none';
+            hideLoader(loader);
             
             if (productsData.data && productsData.data.length > 0) {
-                const isMobileDevice = window.innerWidth <= 768;
+                const currentMobileView = isMobile();
                 
-                const productsBeforeBanner = isMobileDevice ? 4 : 5;
+                const productsBeforeBanner = currentMobileView ? 4 : 5;
                 
                 for (let i = 0; i < productsBeforeBanner && i < productsData.data.length; i++) {
                     const productElement = createProductElementForGrid(productsData.data[i], i);
@@ -108,17 +105,17 @@ const initProductGrid = () => {
                 }
             }
             
-            isLoading = false;
+            state.isLoading = false;
         } catch (error) {
             console.error('Błąd podczas ładowania produktów:', error);
-            loader.style.display = 'none';
+            hideLoader(loader);
             productsGrid.innerHTML = '<p class="error-message">Nie udało się załadować produktów. Spróbuj ponownie później.</p>';
             if (promoBanner) {
                 productsGrid.appendChild(promoBanner);
             }
-            isLoading = false;
+            state.isLoading = false;
         }
-    }
+    };
     
     const initializeDropdownSelector = () => {
         const dropdownSelector = document.querySelector('.dropdown-selector');
@@ -137,17 +134,17 @@ const initProductGrid = () => {
                     option.style.display = 'flex';
                 }
             });
-        }
+        };
         
         updateVisibleOptions();
         
-        dropdownSelector.addEventListener('click', function(e) {
+        dropdownSelector.addEventListener('click', (e) => {
             dropdownSelector.classList.toggle('active');
             updateVisibleOptions();
             e.stopPropagation();
         });
         
-        document.addEventListener('click', function() {
+        document.addEventListener('click', () => {
             dropdownSelector.classList.remove('active');
         });
         
@@ -157,31 +154,28 @@ const initProductGrid = () => {
                 const value = parseInt(this.dataset.value);
                 
                 selectedOption.textContent = value;
-                
-                productsPerPage = value;
+                state.productsPerPage = value;
                 
                 dropdownSelector.classList.remove('active');
-                
                 updateVisibleOptions();
                 
                 loadInitialGridProducts();
             });
         });
-    }
+    };
     
-    const initializeLazyLoading = () => {
-    }
     
     window.addEventListener('resize', () => {
-        const currentMobileState = window.innerWidth <= 768;
+        const currentMobileState = isMobile();
         
-        if (currentMobileState !== isMobileView) {
-            isMobileView = currentMobileState;
+        if (currentMobileState !== state.isMobileView) {
+            state.isMobileView = currentMobileState;
             loadInitialGridProducts();
         }
     });
     
     initializeDropdownSelector();
     loadInitialGridProducts();
-    initializeLazyLoading();
-} 
+};
+
+export default initProductGrid; 
