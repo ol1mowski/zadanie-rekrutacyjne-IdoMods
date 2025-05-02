@@ -2,6 +2,14 @@
 
 Aplikacja serwerowa do pobierania, przetwarzania i udostępniania zamówień z API idoSell (wersja 5).
 
+## 🔐 Domyślne dane logowania
+
+| Pole     | Wartość        |
+|----------|----------------|
+| **Login**  | `admin`         |
+| **Hasło**  | `password123`   |
+
+
 ## Funkcjonalności
 
 - Pobieranie zamówień z API idoSell
@@ -53,10 +61,11 @@ Konfiguracja aplikacji znajduje się w pliku `src/config.ts`. Możesz dostosowa�
 W produkcji zalecane jest ustawienie zmiennych środowiskowych:
 
 - `PORT` - port serwera
+- `API_KEY` - klucz do API
+- `PANEL_URL` - adres URL panelu
 - `API_USERNAME` - nazwa użytkownika do Basic Auth
 - `API_PASSWORD` - hasło do Basic Auth
-- `ENABLE_SCHEDULER` - włączenie/wyłączenie harmonogramu (true/false)
-- `DAILY_CRON` - wyrażenie cron dla zadania codziennego (domyślnie '0 0 * * *')
+- `DAILY_CRON` - wyrażenie cron dla zadania codziennego (domyślnie '0 0 \* \* \*')
 
 ## Endpointy API
 
@@ -67,6 +76,7 @@ Wszystkie endpointy wymagają uwierzytelnienia Basic Auth.
 Pobiera listę zamówień z możliwością filtrowania.
 
 **Parametry zapytania:**
+
 - `minWorth` - minimalna wartość zamówienia (opcjonalnie)
 - `maxWorth` - maksymalna wartość zamówienia (opcjonalnie)
 
@@ -97,6 +107,7 @@ Przykładowa odpowiedź:
 Pobiera listę zamówień w formacie CSV.
 
 **Parametry zapytania:**
+
 - `minWorth` - minimalna wartość zamówienia (opcjonalnie)
 - `maxWorth` - maksymalna wartość zamówienia (opcjonalnie)
 
@@ -115,6 +126,7 @@ Wymusza ręczne odświeżenie danych z API idoSell.
 ## Automatyczne aktualizacje
 
 Aplikacja automatycznie pobiera dane z API idoSell:
+
 - Przy starcie aplikacji
 - Codziennie o północy (lub zgodnie z ustawionym harmonogramem)
 
@@ -130,7 +142,8 @@ Aplikacja korzysta z następujących endpointów API idoSell v5:
 ```
 server/
 ├── src/                 # Kod źródłowy
-│   ├── config.ts        # Konfiguracja aplikacji
+│   ├── config/          # Konfiguracja aplikacji
+    ├── e2e/             # Testy end-to-end
 │   ├── app.ts           # Główny plik aplikacji
 │   ├── controllers/     # Kontrolery HTTP
 │   ├── routes/          # Routing API
@@ -175,4 +188,4 @@ chmod +x ./e2e-test.sh
 1. Testy E2E powinny sprawdzać krytyczne ścieżki użytkownika
 2. Testy powinny być niezależne od siebie
 3. Unikaj testowania szczegółów implementacji, skupiaj się na testowaniu funkcjonalności
-4. Używaj zmiennych środowiskowych, aby nie zaśmiecać prawdziwej bazy danych 
+4. Używaj zmiennych środowiskowych, aby nie zaśmiecać prawdziwej bazy danych
