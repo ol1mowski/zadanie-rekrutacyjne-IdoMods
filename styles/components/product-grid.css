@@ -112,12 +112,16 @@
     .products-grid-section {
         padding: 2rem 1rem;
     }
+    .product-id {
+        font-size: 12px;
+    }
     
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
     
     .products-grid .product-card {
-        height: 350px;
+        height: 230px;
     }
 } 

@@ -151,7 +151,7 @@
 
 @media (max-width: 480px) {
     .promo-banner {
-        grid-column: span 1;
+        grid-column: span 2;
         height: 420px;
         border-radius: 8px;
         text-align: center;
