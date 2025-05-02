@@ -119,11 +119,13 @@ const initProductGrid = () => {
     
     const initializeDropdownSelector = () => {
         const dropdownSelector = document.querySelector('.dropdown-selector');
+        const dropdownHeader = document.querySelector('.dropdown-header');
         const selectedOption = document.querySelector('.selected-option');
         const dropdownOptions = document.querySelectorAll('.dropdown-option');
         
-        if (!dropdownSelector || !selectedOption || !dropdownOptions.length) return;
+        if (!dropdownSelector || !dropdownHeader || !selectedOption || !dropdownOptions.length) return;
         
+        // Ukryj opcję, która odpowiada aktualnemu wyborowi
         const updateVisibleOptions = () => {
             const currentValue = selectedOption.textContent.trim();
             
@@ -132,33 +134,48 @@ const initProductGrid = () => {
                     option.style.display = 'none';
                 } else {
                     option.style.display = 'flex';
+                    option.style.justifyContent = 'center';
+                    option.style.alignItems = 'center';
                 }
             });
         };
         
+        // Inicjalne ukrycie opcji
         updateVisibleOptions();
         
-        dropdownSelector.addEventListener('click', (e) => {
+        // Po kliknięciu w nagłówek dropdown
+        dropdownHeader.addEventListener('click', (e) => {
+            // Przełącz stan aktywny
             dropdownSelector.classList.toggle('active');
+            
+            // Aktualizuj widoczne opcje
             updateVisibleOptions();
+            
             e.stopPropagation();
         });
         
+        // Zamknij dropdown po kliknięciu poza nim
         document.addEventListener('click', () => {
             dropdownSelector.classList.remove('active');
         });
         
+        // Obsługa kliknięcia na opcje
         dropdownOptions.forEach(option => {
             option.addEventListener('click', function(e) {
                 e.stopPropagation();
                 const value = parseInt(this.dataset.value);
                 
+                // Aktualizuj wybraną opcję
                 selectedOption.textContent = value;
                 state.productsPerPage = value;
                 
+                // Zamknij dropdown
                 dropdownSelector.classList.remove('active');
+                
+                // Aktualizuj widoczne opcje
                 updateVisibleOptions();
                 
+                // Załaduj produkty z nowym limitem
                 loadInitialGridProducts();
             });
         });
