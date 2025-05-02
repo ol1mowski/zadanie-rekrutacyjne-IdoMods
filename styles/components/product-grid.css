@@ -55,8 +55,8 @@
     top: 10px;
     left: 10px;
     font-size: 0.75rem;
-    font-weight: 600;
-    color: #333;
+    font-weight: var(--body-font-weight);
+    color: var(--main-black);
     background-color: transparent;
     padding: 2px 5px;
     border-radius: 2px;
@@ -67,7 +67,7 @@
 /* Dodatkowe style dla identyfikatorów w siatce produktów */
 .products-grid .product-id {
     bottom: auto;
-    color: #333;
+    color: var(--main-black);
     background-color: transparent;
 }
 

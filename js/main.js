@@ -8,6 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
     initFeaturedProducts();
     initProductGrid();
     initProductPopup();
+    
+    // Ustawienie odpowiedniego obrazu hero w zależności od szerokości ekranu
+    updateHeroImage();
+    
+    // Nasłuchiwanie na zmianę rozmiaru okna, aby zaktualizować obraz hero
+    window.addEventListener('resize', updateHeroImage);
 });
 
 // Importy modułów
@@ -30,4 +36,18 @@ function initHeader() {
     
     // Nasłuchiwanie zdarzenia przewijania dla sticky header
     window.addEventListener('scroll', handleStickyHeader);
+}
+
+// Funkcja zmieniająca obraz hero w zależności od szerokości ekranu
+function updateHeroImage() {
+    const heroImg = document.getElementById('hero-img');
+    if (!heroImg) return;
+    
+    if (window.innerWidth <= 768) {
+        // Urządzenia mobilne
+        heroImg.src = 'images/hero_mobile.webp';
+    } else {
+        // Desktop i większe tablety
+        heroImg.src = 'images/hero.webp';
+    }
 } 

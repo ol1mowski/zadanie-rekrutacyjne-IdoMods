@@ -52,10 +52,10 @@
     padding: 0;
 }
 
-.close-btn span {
-    font-size: 24px;
+.close-btn-text {
+    font-size: 16px;
     line-height: 1;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .mobile-menu-content {

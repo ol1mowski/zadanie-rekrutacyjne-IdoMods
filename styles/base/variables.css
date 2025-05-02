@@ -1,22 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-    --main-black: #1a1a1a;
+    /* Kolory primary */
+    --main-black: #1d1d1d;
+    --light-gray: #eaeae8;
     --white: #ffffff;
+    
+    /* Kolory labels */
+    --label-beige: #d9d6b0;
+    --label-purple: #d4b0d9;
     
     --font-family-base: 'Inter', sans-serif;
     
+    /* Desktop typografia */
     --body-font-size: 16px;
     --body-line-height: 1.5;
-    --body-font-weight: 400;
+    --body-font-weight: 500;
     
-    --body-large-font-size: 16px;
+    --body-large-font-size: 20px;
     --body-large-line-height: 1.6;
-    --body-large-font-weight: 400;
+    --body-large-font-weight: 600;
     
-    --h1-font-size: 146px;
-    --h1-line-height: 1;
-    --h1-font-weight: 600;
+    /* H1 responsywne rozmiary */
+    --h1-font-size: min(10rem, 20vw); /* Responsywna wartość dla dużych ekranów */
+    --h1-line-height: 1.1;
+    --h1-font-weight: 700;
 
     --browse-featured-font-size: 18px;
     --browse-featured-line-height: 1.3;
@@ -28,24 +36,37 @@
 /* Responsywność zmiennych */
 @media (max-width: 1400px) {
     :root {
-        --h1-font-size: 130px;
+        --h1-font-size: min(8rem, 18vw);
     }
 }
 
 @media (max-width: 1200px) {
     :root {
-        --h1-font-size: 110px;
+        --h1-font-size: min(7rem, 16vw);
     }
 }
 
 @media (max-width: 1020px) {
     :root {
-        --h1-font-size: 90px;
+        --h1-font-size: min(6rem, 16vw);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        /* Mobile typografia */
+        --body-font-size: 16px;
+        --body-font-weight: 500;
+        
+        --body-large-font-size: 18px;
+        --body-large-font-weight: 600;
+        
+        /* Wartość w hero.css nadpisuje tę zmienną dla h1 poprzez media queries */
     }
 }
 
 @media (max-width: 480px) {
     :root {
-        --h1-font-size: 50px;
+        /* Wartość w hero.css nadpisuje tę zmienną dla h1 poprzez media queries */
     }
 } 

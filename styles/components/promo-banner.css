@@ -31,7 +31,7 @@
     justify-content: space-between;
     position: relative;
     z-index: 2;
-    color: black;
+    color: var(--main-black);
     text-shadow: none;
     background: none;
     height: 100%;
@@ -45,7 +45,7 @@
 
 .promo-banner-label {
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: var(--body-large-font-weight);
     text-transform: uppercase;
     margin-bottom: 0.25rem;
     letter-spacing: 0.5px;
@@ -53,19 +53,19 @@
 }
 
 .promo-banner-title {
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: var(--body-large-font-size);
+    font-weight: var(--body-large-font-weight);
     line-height: 1.2;
     max-width: 70%;
     margin: 0 auto;
 }
 
 .promo-banner-button {
-    background-color: white;
+    background-color: var(--white);
     border: none;
     padding: 10px 20px;
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: var(--body-font-weight);
     border-radius: 2px;
     cursor: pointer;
     display: flex;
@@ -82,7 +82,7 @@
 }
 
 .promo-banner-button:hover {
-    background-color: #f0f0f0;
+    background-color: var(--light-gray);
 }
 
 /* Responsywność dla banera promocyjnego */
@@ -106,7 +106,7 @@
     
     .promo-banner-title {
         max-width: 90%;
-        font-size: 1.6rem;
+        font-size: var(--body-large-font-size);
     }
 }
 
@@ -118,7 +118,7 @@
     
     .promo-banner-title {
         max-width: 90%;
-        font-size: 1.6rem;
+        font-size: var(--body-large-font-size);
     }
     
     .promo-banner-content {

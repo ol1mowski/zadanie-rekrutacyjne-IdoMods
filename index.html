@@ -1,208 +1,180 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Forma'Sint</title>
-    <link rel="stylesheet" href="styles/main.css" />
-    <link rel="icon" href="images/logo.webp" type="image/x-icon" />
-    <meta
-      name="description"
-      content="Forma'Sint - profesjonalna strona internetowa"
-    />
-    <meta name="robots" content="index,follow" />
-  </head>
-  <body>
-    <header>
-      <div class="left-header">
-        <a href="/" class="logo">
-          <div>
-            <span>F</span>
-          </div>
-          <span class="logo-text">FORMA'SINT.</span>
-        </a>
-        <div class="logo-subtitle">
-          IDOMODS <span class="code-tag">&lt;/&gt;</span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forma'Sint</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="icon" href="images/logo.webp" type="image/x-icon" />
+  <meta name="description" content="Forma'Sint - profesjonalna strona internetowa" />
+  <meta name="robots" content="index,follow" />
+</head>
+
+<body>
+  <header>
+    <div class="left-header">
+      <a href="/" class="logo">
+        <div>
+          <span>F</span>
         </div>
+        <span class="logo-text">FORMA'SINT.</span>
+      </a>
+      <div class="logo-subtitle">
+        IDOMODS <span class="code-tag">&lt;/&gt;</span>
       </div>
+    </div>
 
-      <div class="header-spacer"></div>
+    <div class="header-spacer"></div>
 
-      <nav class="desktop-nav">
+    <nav class="desktop-nav">
+      <ul>
+        <li><a href="#" class="active">HOME</a></li>
+        <li><a href="#featured-products">FEATURED PRODUCTS</a></li>
+        <li><a href="#product-listing">PRODUCT LISTING</a></li>
+      </ul>
+    </nav>
+
+    <div class="mobile-menu-btn">
+      <div class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <span class="menu-text">MENU</span>
+    </div>
+
+    <div class="user-info">
+      <img src="images/user.webp" alt="Ikona użytkownika" class="user-icon" loading="lazy" />
+      <span class="user-role">FRONTEND DEVELOPER</span>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <div class="mobile-menu-header">
+      <a href="/" class="logo">
+        <img src="images/logo.webp" alt="Logo Forma'Sint" class="logo-img" loading="lazy" />
+      </a>
+      <button class="close-btn"><img src="./images/close.webp" alt="Przycisk zamykania" class="close-btn-icon"
+          loading="lazy"> <span class="close-btn-text">CLOSE</span></button>
+    </div>
+
+    <div class="mobile-menu-content">
+      <nav class="mobile-nav">
         <ul>
-          <li><a href="#" class="active">HOME</a></li>
+          <li><a href="#">HOME</a></li>
           <li><a href="#featured-products">FEATURED PRODUCTS</a></li>
           <li><a href="#product-listing">PRODUCT LISTING</a></li>
         </ul>
       </nav>
+    </div>
+  </div>
 
-      <div class="mobile-menu-btn">
-        <div class="hamburger-icon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <span class="menu-text">MENU</span>
-      </div>
+  <div class="menu-overlay"></div>
 
-      <div class="user-info">
-        <img src="images/user.webp" alt="Ikona użytkownika" class="user-icon" loading="lazy" />
-        <span class="user-role">FRONTEND DEVELOPER</span>
-      </div>
-    </header>
-
-    <div class="mobile-menu">
-      <div class="mobile-menu-header">
-        <a href="/" class="logo">
-          <img src="images/logo.webp" alt="Logo Forma'Sint" class="logo-img" loading="lazy"/>
-        </a>
-        <button class="close-btn"><span>×</span> CLOSE</button>
-      </div>
-
-      <div class="mobile-menu-content">
-        <nav class="mobile-nav">
-          <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#featured-products">FEATURED PRODUCTS</a></li>
-            <li><a href="#product-listing">PRODUCT LISTING</a></li>
-          </ul>
-        </nav>
+  <main>
+    <div class="hero">
+      <h1>Forma'Sint.</h1>
+      <div class="hero-image">
+        <img
+          src="images/hero.webp"
+          alt="Wspinacz górski na skale podczas zachodu słońca"
+          class="full-image"
+          id="hero-img"
+          loading="lazy"
+        />
       </div>
     </div>
 
-    <div class="menu-overlay"></div>
-
-    <main>
-      <div class="hero">
-        <h1>Forma'Sint.</h1>
-        <div class="hero-image">
-          <img
-            src="images/hero_photo.webp"
-            alt="Wspinacz górski na skale podczas zachodu słońca"
-            class="full-image"
-            loading="lazy"
-            sizes="(max-width: 768px) 100vw, 1200px"
-          />
-        </div>
+    <section class="products-section" id="featured-products">
+      <div class="section-header">
+        <span class="section-label">FEATURED PRODUCTS</span>
+        <h2>Browse featured</h2>
       </div>
 
-      <section class="products-section" id="featured-products">
-        <div class="section-header">
-          <span class="section-label">FEATURED PRODUCTS</span>
-          <h2>Browse featured</h2>
-        </div>
+      <div class="products-container">
+        <img src="images/arrow.webp" alt="Przycisk przewijania w lewo" class="products-scroll-btn scroll-left-btn"
+          id="scroll-left-btn" loading="lazy" />
 
-        <div class="products-container">
-          <img
-            src="images/arrow.webp"
-            alt="Przycisk przewijania w lewo"
-            class="products-scroll-btn scroll-left-btn"
-            id="scroll-left-btn"
-            loading="lazy"
-          />
-
-          <div class="products-wrapper" id="products-wrapper">
-            <div class="loader" id="products-loader">
-              <div class="spinner"></div>
-            </div>
-          </div>
-
-          <img
-            src="images/arrow.webp"
-            alt="Przycisk przewijania w prawo"
-            class="products-scroll-btn scroll-right-btn"
-            id="scroll-right-btn"
-            loading="lazy"
-          />
-        </div>
-
-        <div class="section-separator-container">
-          <div class="section-separator">
-            <div
-              class="section-separator-progress"
-              id="scroll-progress-bar"
-            ></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="products-grid-section" id="product-listing">
-        <div class="products-grid-options">
-          <div class="products-per-page">
-            <span class="options-label">NUMBER OF PRODUCTS PER PAGE</span>
-            <div class="dropdown-selector">
-              <span class="selected-option">14</span>
-              <img
-                src="images/dropDown.webp"
-                alt="Strzałka rozwijająca dropdown"
-                class="dropdown-arrow"
-                loading="lazy"
-              />
-              <div class="dropdown-options">
-                <div class="dropdown-option" data-value="14">14</div>
-                <div class="dropdown-option" data-value="24">24</div>
-                <div class="dropdown-option" data-value="36">36</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="products-grid-container">
-          <div class="loader" id="products-grid-loader">
+        <div class="products-wrapper" id="products-wrapper">
+          <div class="loader" id="products-loader">
             <div class="spinner"></div>
           </div>
+        </div>
 
-          <div class="products-grid" id="products-grid">
-            <div class="promo-banner">
-              <img
-                src="images/narty.webp"
-                alt="Narciarz na stoku górskim w świetle słonecznym"
-                class="promo-banner-image"
-                loading="lazy"
-                sizes="(max-width: 768px) 100vw, 800px"
-              />
-              <div class="promo-banner-content">
-                <div class="promo-banner-header">
-                  <span class="promo-banner-label">FORMA'SINT.</span>
-                  <h3 class="promo-banner-title">
-                    You'll look and feel like the champion.
-                  </h3>
-                </div>
-                <button class="promo-banner-button">
-                  CHECK THIS OUT <span class="button-arrow">›</span>
-                </button>
-              </div>
+        <img src="images/arrow.webp" alt="Przycisk przewijania w prawo" class="products-scroll-btn scroll-right-btn"
+          id="scroll-right-btn" loading="lazy" />
+      </div>
+
+      <div class="section-separator-container">
+        <div class="section-separator">
+          <div class="section-separator-progress" id="scroll-progress-bar"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-grid-section" id="product-listing">
+      <div class="products-grid-options">
+        <div class="products-per-page">
+          <span class="options-label">NUMBER OF PRODUCTS PER PAGE</span>
+          <div class="dropdown-selector">
+            <span class="selected-option">14</span>
+            <img src="images/dropDown.webp" alt="Strzałka rozwijająca dropdown" class="dropdown-arrow" loading="lazy" />
+            <div class="dropdown-options">
+              <div class="dropdown-option" data-value="14">14</div>
+              <div class="dropdown-option" data-value="24">24</div>
+              <div class="dropdown-option" data-value="36">36</div>
             </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
 
-    <div class="product-popup" id="product-popup">
-      <div class="product-popup-content">
-        <button class="popup-close" id="popup-close">
-          <img src="./images/close.webp" alt="Przycisk zamykania" class="popup-close-icon" loading="lazy" />
-          CLOSE
-        </button>
-        <span class="popup-product-id" id="popup-product-id">ID: 01</span>
-        <div class="popup-product-image-container">
-          <img
-            src=""
-            alt="Szczegóły produktu"
-            class="popup-product-image"
-            id="popup-product-image"
-            loading="lazy"
-          />
+      <div class="products-grid-container">
+        <div class="loader" id="products-grid-loader">
+          <div class="spinner"></div>
+        </div>
+
+        <div class="products-grid" id="products-grid">
+          <div class="promo-banner">
+            <img src="images/narty.webp" alt="Narciarz na stoku górskim w świetle słonecznym" class="promo-banner-image"
+              loading="lazy" sizes="(max-width: 768px) 100vw, 800px" />
+            <div class="promo-banner-content">
+              <div class="promo-banner-header">
+                <span class="promo-banner-label">FORMA'SINT.</span>
+                <h3 class="promo-banner-title">
+                  You'll look and feel like the champion.
+                </h3>
+              </div>
+              <button class="promo-banner-button">
+                CHECK THIS OUT <span class="button-arrow">›</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
+  </main>
+
+  <div class="product-popup" id="product-popup">
+    <div class="product-popup-content">
+      <button class="popup-close" id="popup-close">
+        <img src="./images/close.webp" alt="Przycisk zamykania" class="popup-close-icon" loading="lazy" />
+        CLOSE
+      </button>
+      <span class="popup-product-id" id="popup-product-id">ID: 01</span>
+      <div class="popup-product-image-container">
+        <img src="" alt="Szczegóły produktu" class="popup-product-image" id="popup-product-image" loading="lazy" />
+      </div>
     </div>
-    <div class="popup-overlay" id="popup-overlay"></div>
+  </div>
+  <div class="popup-overlay" id="popup-overlay"></div>
 
 
-    <script src="js/components/mobileMenu.js"></script>
-    <script src="js/components/featuredProducts.js"></script>
-    <script src="js/components/productGrid.js"></script>
-    <script src="js/components/productPopup.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+  <script src="js/components/mobileMenu.js"></script>
+  <script src="js/components/featuredProducts.js"></script>
+  <script src="js/components/productGrid.js"></script>
+  <script src="js/components/productPopup.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>

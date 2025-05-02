@@ -10,7 +10,7 @@
 .product-image-container {
     position: relative;
     height: 520px;
-    background-color: #f5f5f5;
+    background-color: var(--light-gray);
     border-radius: 4px;
     overflow: hidden;
     margin-bottom: 1rem;
@@ -33,12 +33,12 @@
 }
 
 .badge-bestseller {
-    background-color: #e9e5c9;
+    background-color: var(--label-beige);
     color: #5f5d3c;
 }
 
 .badge-limited {
-    background-color: #e9c9e5;
+    background-color: var(--label-purple);
     color: #5d3c5f;
 }
 
@@ -63,7 +63,7 @@
     right: 10px;
     width: 30px;
     height: 30px;
-    background-color: white;
+    background-color: var(--white);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -92,14 +92,15 @@
 }
 
 .product-title {
-    font-size: 0.95rem;
-    font-weight: 500;
+    font-size: var(--body-large-font-size);
+    font-weight: var(--body-large-font-weight);
     margin: 0 0 0.5rem;
     color: var(--main-black);
 }
 
 .product-price {
-    font-size: 0.9rem;
+    font-size: var(--body-font-size);
+    font-weight: var(--body-font-weight);
     color: #666;
 }
 
@@ -108,7 +109,7 @@
     bottom: 10px;
     left: 10px;
     font-size: 0.7rem;
-    color: #333;
+    color: var(--main-black);
     background-color: transparent;
     padding: 2px 8px;
     border-radius: 10px;
@@ -129,7 +130,7 @@
 .product-tag {
     font-size: 0.7rem;
     background-color: rgba(255, 255, 255, 0.8);
-    color: #333;
+    color: var(--main-black);
     padding: 3px 8px;
     border-radius: 10px;
     display: inline-block;
