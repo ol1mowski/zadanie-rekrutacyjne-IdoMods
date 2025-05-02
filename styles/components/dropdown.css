@@ -62,7 +62,7 @@
     border-bottom: none;
 }
 
-.dropdown-arrow {
+.dropdown-selector .dropdown-arrow {
     width: 24px;
     height: 24px;
     filter: brightness(0);

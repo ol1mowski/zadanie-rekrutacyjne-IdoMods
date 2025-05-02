@@ -49,7 +49,11 @@ const initProductGrid = () => {
         productElement.innerHTML = productHtml;
         
         productElement.addEventListener('click', () => {
-            window.openProductPopup(product.image, formattedIndex);
+            window.openProductPopup(
+                product.image, 
+                formattedIndex, 
+                product.name || `Produkt ${formattedIndex}`
+            );
         });
         
         return productElement;

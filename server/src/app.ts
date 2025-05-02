@@ -42,6 +42,7 @@ app.listen(PORT, () => {
   console.log(`Serwer działa na porcie ${PORT}`);
   console.log('API dostępne pod adresem:');
   console.log(`- http://localhost:${PORT}/api/orders - Lista zamówień (wymaga uwierzytelnienia)`);
+  console.log(`- http://localhost:${PORT}/api/orders?minWorth=x&maxWorth=y - Lista zamówień o wartości pomiędzy x a y`);
   console.log(`- http://localhost:${PORT}/api/orders/csv - Eksport wszystkich zamówień do CSV`);
   console.log(`- http://localhost:${PORT}/api/orders/:id - Pobierz konkretne zamówienie (wymaga uwierzytelnienia)`);
   console.log(`- http://localhost:${PORT}/api/orders/csv/:id - Eksport konkretnego zamówienia do CSV`);

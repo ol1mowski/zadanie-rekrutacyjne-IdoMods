@@ -1,3 +1,5 @@
+import { initMetaTags, updateProductMetaTags, restoreOriginalMetaTags } from '../utils/metaUtils.js';
+
 const initProductPopup = () => {
     const elements = {
         popup: document.getElementById('product-popup'),
@@ -10,7 +12,9 @@ const initProductPopup = () => {
     const { popup, overlay, closeBtn, popupImage, popupId } = elements;
     if (!popup || !overlay || !closeBtn || !popupImage || !popupId) return;
     
-    const openProductPopup = (imageSrc, productId) => {
+    initMetaTags();
+    
+    const openProductPopup = (imageSrc, productId, productName = '') => {
         popupImage.src = imageSrc;
         popupImage.alt = `Szczegółowy widok produktu ${productId}`;
         popupImage.loading = "lazy";
@@ -21,12 +25,16 @@ const initProductPopup = () => {
         
         popupId.textContent = `ID: ${productId}`;
         
+        updateProductMetaTags(productId, productName);
+        
         popup.classList.add('active');
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
     };
     
     const closeProductPopup = () => {
+        restoreOriginalMetaTags();
+        
         popup.classList.remove('active');
         overlay.classList.remove('active');
         document.body.style.overflow = '';
