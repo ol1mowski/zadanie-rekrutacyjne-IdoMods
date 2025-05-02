@@ -39,7 +39,7 @@ main {
     font-size: var(--body-large-font-size);
     line-height: var(--body-large-line-height);
     font-weight: var(--body-large-font-weight);
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--spacing-xs);
     text-align: center;
 }
 
@@ -47,6 +47,6 @@ main {
     font-size: var(--browse-featured-font-size);
     line-height: var(--browse-featured-line-height);
     font-weight: var(--browse-featured-font-weight);
-    color: #333;
+    color: var(--main-black);
     text-align: center;
 } 

@@ -125,7 +125,6 @@ const initProductGrid = () => {
         
         if (!dropdownSelector || !dropdownHeader || !selectedOption || !dropdownOptions.length) return;
         
-        // Ukryj opcję, która odpowiada aktualnemu wyborowi
         const updateVisibleOptions = () => {
             const currentValue = selectedOption.textContent.trim();
             
@@ -140,42 +139,32 @@ const initProductGrid = () => {
             });
         };
         
-        // Inicjalne ukrycie opcji
         updateVisibleOptions();
         
-        // Po kliknięciu w nagłówek dropdown
         dropdownHeader.addEventListener('click', (e) => {
-            // Przełącz stan aktywny
             dropdownSelector.classList.toggle('active');
             
-            // Aktualizuj widoczne opcje
             updateVisibleOptions();
             
             e.stopPropagation();
         });
         
-        // Zamknij dropdown po kliknięciu poza nim
         document.addEventListener('click', () => {
             dropdownSelector.classList.remove('active');
         });
         
-        // Obsługa kliknięcia na opcje
         dropdownOptions.forEach(option => {
             option.addEventListener('click', function(e) {
                 e.stopPropagation();
                 const value = parseInt(this.dataset.value);
                 
-                // Aktualizuj wybraną opcję
                 selectedOption.textContent = value;
                 state.productsPerPage = value;
                 
-                // Zamknij dropdown
                 dropdownSelector.classList.remove('active');
                 
-                // Aktualizuj widoczne opcje
                 updateVisibleOptions();
                 
-                // Załaduj produkty z nowym limitem
                 loadInitialGridProducts();
             });
         });

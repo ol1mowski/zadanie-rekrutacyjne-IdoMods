@@ -1,18 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-    /* Kolory primary */
     --main-black: #1d1d1d;
     --light-gray: #eaeae8;
     --white: #ffffff;
     
-    /* Kolory labels */
     --label-beige: #d9d6b0;
     --label-purple: #d4b0d9;
     
     --font-family-base: 'Inter', sans-serif;
     
-    /* Desktop typografia */
     --body-font-size: 16px;
     --body-line-height: 1.5;
     --body-font-weight: 500;
@@ -21,8 +18,7 @@
     --body-large-line-height: 1.6;
     --body-large-font-weight: 600;
     
-    /* H1 responsywne rozmiary */
-    --h1-font-size: min(10rem, 20vw); /* Responsywna wartość dla dużych ekranów */
+    --h1-font-size: min(10rem, 20vw);
     --h1-line-height: 1.1;
     --h1-font-weight: 700;
 
@@ -31,9 +27,17 @@
     --browse-featured-font-weight: 600;
 
     --header-font-size: 14px;
+    
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
 }
 
-/* Responsywność zmiennych */
 @media (max-width: 1400px) {
     :root {
         --h1-font-size: min(8rem, 18vw);
@@ -54,13 +58,11 @@
 
 @media (max-width: 768px) {
     :root {
-        /* Mobile typografia */
         --body-font-size: 16px;
         --body-font-weight: 500;
         
         --body-large-font-size: 18px;
         --body-large-font-weight: 600;
         
-        /* Wartość w hero.css nadpisuje tę zmienną dla h1 poprzez media queries */
     }
 }

@@ -1,3 +1,11 @@
+:root {
+    --dropdown-font-size: 16px;
+    --dropdown-font-weight: 700;
+    --dropdown-padding: 10px 12px;
+    --dropdown-border-color: var(--light-gray);
+    --dropdown-option-height: 40px;
+}
+
 .products-per-page {
     display: flex;
     align-items: center;
@@ -5,71 +13,63 @@
 }
 
 .options-label {
-    font-size: 16px;
+    font-size: var(--dropdown-font-size);
     font-weight: var(--body-font-weight);
     color: var(--main-black);
     text-transform: uppercase;
 }
 
-/* Styl dla całego selektora dropdown */
 .dropdown-selector {
     position: relative;
     cursor: pointer;
     min-width: 80px;
     background-color: var(--white);
-    border: none; /* Brak obramowania na początku */
+    border: none;
     border-radius: 4px;
 }
 
-/* Po aktywacji pojawia się border */
 .dropdown-selector.active {
-    border: 1px solid var(--light-gray);
+    border: 1px solid var(--dropdown-border-color);
 }
 
-/* Kontener dla nagłówka dropdown (liczba + strzałka) */
 .dropdown-header {
     display: flex;
     align-items: center;
-    justify-content: center; /* Centrowanie poziome */
-    padding: 10px 12px;
-    position: relative; /* Dla pozycjonowania strzałki */
+    justify-content: center;
+    padding: var(--dropdown-padding);
+    position: relative;
 }
 
-/* Styl dla wybranej opcji */
 .selected-option {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: var(--dropdown-font-size);
+    font-weight: var(--dropdown-font-weight);
     padding-bottom: 2px;
     border-bottom: none;
-    margin-right: 15px; /* Większy odstęp od strzałki */
+    margin-right: 15px;
 }
 
-/* Podkreślenie pojawia się tylko po aktywacji dropdown i rozciąga się pod strzałką */
 .dropdown-selector.active .dropdown-header::after {
     content: '';
     position: absolute;
-    bottom: 8px; /* Dostosuj do pozycji podkreślenia */
+    bottom: 8px;
     left: 12px;
     right: 12px;
     height: 1.5px;
     background-color: var(--main-black);
 }
 
-/* Usunięcie podkreślenia z .selected-option, ponieważ teraz jest wspólne */
 .dropdown-selector.active .selected-option {
     border-bottom: none;
 }
 
-/* Strzałka ma stałą pozycję po prawej stronie */
 .dropdown-arrow {
     width: 24px;
     height: 24px;
     filter: brightness(0);
     position: absolute;
-    right: 8px; /* Stała pozycja niezależnie od szerokości tekstu */
+    right: 8px;
 }
 
-/* Kontener dla opcji dropdown */
 .dropdown-content {
     display: none;
     flex-direction: column;
@@ -77,35 +77,30 @@
     border-top: 0;
 }
 
-/* Wyświetlanie opcji, gdy dropdown jest aktywny */
 .dropdown-selector.active .dropdown-content {
     display: flex;
 }
 
-/* Styl opcji w dropdown */
 .dropdown-option {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40px;
-    font-size: 16px;
-    font-weight: 700;
+    height: var(--dropdown-option-height);
+    font-size: var(--dropdown-font-size);
+    font-weight: var(--dropdown-font-weight);
     cursor: pointer;
-    border-bottom: 1px solid var(--light-gray);
+    border-bottom: 1px solid var(--dropdown-border-color);
     padding: 0;
 }
 
-/* Ostatnia opcja bez dolnego obramowania */
 .dropdown-option:last-child {
     border-bottom: none;
 }
 
-/* Hover na opcji */
 .dropdown-option:hover {
     background-color: var(--light-gray);
 }
 
-/* RWD dla dropdowna */
 @media (max-width: 480px) {
     .products-per-page {
         flex-direction: column;

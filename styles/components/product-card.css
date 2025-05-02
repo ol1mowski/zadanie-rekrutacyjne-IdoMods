@@ -1,8 +1,6 @@
-/* Style dla kart produktów */
-
 .product-card {
     flex: 0 0 auto;
-    width: calc(25% - 1.125rem); /* Dokładnie 4 elementy w rzędzie (25% - 3/4 odstępu między elementami) */
+    width: calc(25% - 1.125rem);
     position: relative;
     cursor: pointer;
 }
@@ -31,17 +29,17 @@
     border-radius: 50px;
     z-index: 2;
     letter-spacing: 0.5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 4px rgba(var(--main-black), 0.05);
 }
 
 .badge-bestseller {
     background-color: var(--label-beige);
-    color: #1d1d1d;
+    color: var(--main-black);
 }
 
 .badge-limited {
     background-color: var(--label-purple);
-    color: #1d1d1d;
+    color: var(--main-black);
 }
 
 .product-image {
@@ -78,7 +76,7 @@
 .product-favorite svg {
     width: 16px;
     height: 16px;
-    stroke: #888;
+    stroke: var(--main-black);
     fill: none;
     transition: all 0.2s ease;
 }
@@ -131,19 +129,18 @@
 
 .product-tag {
     font-size: 0.7rem;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(var(--white), 0.8);
     color: var(--main-black);
     padding: 3px 8px;
     border-radius: 10px;
     display: inline-block;
 }
 
-/* Responsywność dla kart produktów */
 @media (max-width: 1200px) {
     .product-card {
-        width: calc(25% - 1.125rem); /* Nadal 4 elementy, ale z mniejszym odstępem */
+        width: calc(25% - 1.125rem);
     }
-    
+
     .product-image-container {
         height: 350px;
     }
@@ -151,9 +148,9 @@
 
 @media (max-width: 1020px) {
     .product-card {
-        width: calc(33.333% - 1rem); /* 3 elementy w rzędzie na tabletach */
+        width: calc(33.333% - 1rem);
     }
-    
+
     .product-image-container {
         height: 320px;
     }
@@ -161,9 +158,9 @@
 
 @media (max-width: 768px) {
     .product-card {
-        width: calc(50% - 0.75rem); /* 2 elementy w rzędzie na małych tabletach */
+        width: calc(50% - 0.75rem);
     }
-    
+
     .product-image-container {
         height: 300px;
     }
@@ -171,9 +168,9 @@
 
 @media (max-width: 480px) {
     .product-card {
-        width: calc(85% - 0.75rem); /* Prawie cała szerokość na telefonach */
+        width: calc(85% - 0.75rem);
     }
-    
+
     .product-image-container {
         height: 280px;
     }

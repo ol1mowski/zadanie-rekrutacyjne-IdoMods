@@ -27,7 +27,7 @@ const initMobileMenu = () => {
                     link.style.opacity = '1';
                     link.style.transform = 'translateY(0)';
                 }, 80 * index);
-            }, 250);
+            }, 550);
         });
     };
 
@@ -46,7 +46,7 @@ const initMobileMenu = () => {
                 removeClassWithDelay(overlay, 'active', 0);
                 document.body.style.overflow = '';
             }, 150);
-        }, 200);
+        }, 300);
     };
 
     menuLinks.forEach(link => {
