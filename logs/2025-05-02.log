@@ -289,3 +289,202 @@
   "unchanged": 0
 }
 [2025-05-01T22:29:17.861Z] [INFO] Wykonano refreshOrders controller w czasie 0.59ms
+[2025-05-02T05:24:06.029Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-02T05:24:06.032Z] [INFO] Wykonano getOrders controller w czasie 2.64ms
+[2025-05-02T05:24:06.036Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-02T05:24:06.040Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-02T05:24:06.044Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-02T05:24:06.045Z] [INFO] Wykonano getOrdersCSV controller w czasie 0.88ms
+[2025-05-02T05:24:06.049Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-02T05:24:06.049Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-02T05:24:06.050Z] [INFO] Wykonano refreshOrders controller w czasie 1.29ms
+[2025-05-02T05:39:31.068Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-02T05:39:31.071Z] [INFO] Wykonano getOrders controller w czasie 3.39ms
+[2025-05-02T05:39:31.075Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-02T05:39:31.080Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-02T05:39:31.085Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-02T05:39:31.086Z] [INFO] Wykonano getOrdersCSV controller w czasie 1.16ms
+[2025-05-02T05:39:31.090Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-02T05:39:31.090Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-02T05:39:31.092Z] [INFO] Wykonano refreshOrders controller w czasie 2.03ms
+[2025-05-02T05:41:56.666Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:42:45.124Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:43:00.613Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:43:03.198Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:43:45.382Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:44:00.587Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:44:38.235Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:44:59.489Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:45:08.033Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:45:14.160Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:45:45.035Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:47:56.819Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:49:53.030Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:50:04.463Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:50:22.852Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:50:44.737Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:50:47.987Z] [INFO] Pobrano 100 zamówień z filtrem
+{}
+[2025-05-02T05:50:47.992Z] [INFO] Wykonano getOrders controller w czasie 4.78ms
+[2025-05-02T05:50:47.995Z] [INFO] Zamówienie o ID export nie zostało znalezione
+[2025-05-02T05:50:48.027Z] [INFO] Pobrano 35 zamówień z filtrem
+{
+  "minWorth": 100
+}
+[2025-05-02T05:50:48.029Z] [INFO] Wykonano getOrders controller w czasie 1.81ms
+[2025-05-02T05:50:48.755Z] [INFO] Pobrano 100 zamówień z filtrem
+{}
+[2025-05-02T05:50:48.756Z] [INFO] Wykonano getOrders controller w czasie 1.39ms
+[2025-05-02T05:50:48.826Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-02T05:50:48.826Z] [INFO] Pobieranie zamówień z API idoSell
+{
+  "params": {
+    "orderPrepaidStatus": "unpaid",
+    "ordersStatuses": [
+      "finished",
+      "ready",
+      "payment_waiting",
+      "new"
+    ]
+  },
+  "resultsPage": 0,
+  "resultsLimit": 100
+}
+[2025-05-02T05:50:49.168Z] [INFO] API zwróciło 100 zamówień
+[2025-05-02T05:50:49.169Z] [INFO] Przetworzono 100 zamówień z 100 otrzymanych
+[2025-05-02T05:50:49.170Z] [INFO] Wykonano getOrders w czasie 343.34ms
+[2025-05-02T05:50:49.173Z] [DEBUG] Zapisano 100 zamówień do pliku.
+[2025-05-02T05:50:49.174Z] [INFO] Zaktualizowano bazę zamówień. Dodano: 0, zaktualizowano: 4, bez zmian: 96
+[2025-05-02T05:50:49.174Z] [INFO] Wykonano updateOrders w czasie 4.13ms
+[2025-05-02T05:50:49.175Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "updated": 4,
+  "unchanged": 96,
+  "added": 0
+}
+[2025-05-02T05:50:49.176Z] [INFO] Wykonano refreshOrders controller w czasie 350.96ms
+[2025-05-02T05:50:51.040Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:52:34.592Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:52:47.557Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:52:57.585Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:53:12.509Z] [INFO] Pobrano 2 zamówień z filtrem
+{}
+[2025-05-02T05:53:12.511Z] [INFO] Wykonano getOrders controller w czasie 2.64ms
+[2025-05-02T05:53:12.515Z] [INFO] Pobrano zamówienie o ID 1
+[2025-05-02T05:53:12.519Z] [INFO] Zamówienie o ID 999 nie zostało znalezione
+[2025-05-02T05:53:12.525Z] [INFO] Wygenerowano CSV dla 2 zamówień
+[2025-05-02T05:53:12.526Z] [INFO] Wykonano getOrdersCSV controller w czasie 1.03ms
+[2025-05-02T05:53:12.530Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-02T05:53:12.530Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "added": 1,
+  "updated": 1,
+  "unchanged": 0
+}
+[2025-05-02T05:53:12.531Z] [INFO] Wykonano refreshOrders controller w czasie 1.76ms
+[2025-05-02T05:53:19.816Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:53:23.152Z] [INFO] Wygenerowano CSV dla 100 zamówień
+[2025-05-02T05:53:23.155Z] [INFO] Wykonano getOrdersCSV controller w czasie 3.64ms
+[2025-05-02T05:53:23.158Z] [INFO] Pobrano 100 zamówień z filtrem
+{}
+[2025-05-02T05:53:23.160Z] [INFO] Wykonano getOrders controller w czasie 2.71ms
+[2025-05-02T05:53:23.188Z] [INFO] Pobrano 100 zamówień z filtrem
+{}
+[2025-05-02T05:53:23.190Z] [INFO] Wykonano getOrders controller w czasie 1.54ms
+[2025-05-02T05:53:23.192Z] [INFO] Pobrano 35 zamówień z filtrem
+{
+  "minWorth": 100
+}
+[2025-05-02T05:53:23.193Z] [INFO] Wykonano getOrders controller w czasie 1.27ms
+[2025-05-02T05:53:23.202Z] [INFO] Zamówienie o ID undefined nie zostało znalezione podczas generowania CSV
+[2025-05-02T05:53:23.282Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-02T05:53:23.282Z] [INFO] Pobieranie zamówień z API idoSell
+{
+  "params": {
+    "orderPrepaidStatus": "unpaid",
+    "ordersStatuses": [
+      "finished",
+      "ready",
+      "payment_waiting",
+      "new"
+    ]
+  },
+  "resultsPage": 0,
+  "resultsLimit": 100
+}
+[2025-05-02T05:53:23.621Z] [INFO] API zwróciło 100 zamówień
+[2025-05-02T05:53:23.622Z] [INFO] Przetworzono 100 zamówień z 100 otrzymanych
+[2025-05-02T05:53:23.623Z] [INFO] Wykonano getOrders w czasie 340.62ms
+[2025-05-02T05:53:23.626Z] [DEBUG] Zapisano 100 zamówień do pliku.
+[2025-05-02T05:53:23.627Z] [INFO] Zaktualizowano bazę zamówień. Dodano: 0, zaktualizowano: 4, bez zmian: 96
+[2025-05-02T05:53:23.628Z] [INFO] Wykonano updateOrders w czasie 4.47ms
+[2025-05-02T05:53:23.629Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "updated": 4,
+  "unchanged": 96,
+  "added": 0
+}
+[2025-05-02T05:53:23.630Z] [INFO] Wykonano refreshOrders controller w czasie 348.34ms
+[2025-05-02T05:53:25.743Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:53:53.536Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:54:10.822Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:54:24.253Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:54:36.560Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:55:30.077Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:55:32.340Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:55:43.194Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.
+[2025-05-02T05:55:46.412Z] [INFO] Wygenerowano CSV dla 100 zamówień
+[2025-05-02T05:55:46.417Z] [INFO] Wykonano getOrdersCSV controller w czasie 5.13ms
+[2025-05-02T05:55:46.419Z] [INFO] Pobrano 100 zamówień z filtrem
+{}
+[2025-05-02T05:55:46.423Z] [INFO] Wykonano getOrders controller w czasie 3.38ms
+[2025-05-02T05:55:46.454Z] [INFO] Pobrano 35 zamówień z filtrem
+{
+  "minWorth": 100
+}
+[2025-05-02T05:55:46.456Z] [INFO] Wykonano getOrders controller w czasie 1.97ms
+[2025-05-02T05:55:46.458Z] [INFO] Pobrano 100 zamówień z filtrem
+{}
+[2025-05-02T05:55:46.459Z] [INFO] Wykonano getOrders controller w czasie 1.64ms
+[2025-05-02T05:55:46.466Z] [INFO] Wygenerowano CSV dla zamówienia o ID aaaa@aa.aa-1
+[2025-05-02T05:55:46.554Z] [INFO] Rozpoczęto odświeżanie danych zamówień
+[2025-05-02T05:55:46.554Z] [INFO] Pobieranie zamówień z API idoSell
+{
+  "params": {
+    "orderPrepaidStatus": "unpaid",
+    "ordersStatuses": [
+      "finished",
+      "ready",
+      "payment_waiting",
+      "new"
+    ]
+  },
+  "resultsPage": 0,
+  "resultsLimit": 100
+}
+[2025-05-02T05:55:46.881Z] [INFO] API zwróciło 100 zamówień
+[2025-05-02T05:55:46.882Z] [INFO] Przetworzono 100 zamówień z 100 otrzymanych
+[2025-05-02T05:55:46.883Z] [INFO] Wykonano getOrders w czasie 328.82ms
+[2025-05-02T05:55:46.886Z] [DEBUG] Zapisano 100 zamówień do pliku.
+[2025-05-02T05:55:46.887Z] [INFO] Zaktualizowano bazę zamówień. Dodano: 0, zaktualizowano: 4, bez zmian: 96
+[2025-05-02T05:55:46.888Z] [INFO] Wykonano updateOrders w czasie 4.41ms
+[2025-05-02T05:55:46.888Z] [INFO] Dane zamówień zostały zaktualizowane
+{
+  "updated": 4,
+  "unchanged": 96,
+  "added": 0
+}
+[2025-05-02T05:55:46.890Z] [INFO] Wykonano refreshOrders controller w czasie 336.61ms
+[2025-05-02T05:55:48.734Z] [DEBUG] Zainicjalizowano model zamówień. Wczytano 100 zamówień.

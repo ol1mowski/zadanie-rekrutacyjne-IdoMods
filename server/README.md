@@ -143,4 +143,36 @@ server/
 ├── dist/                # Skompilowany kod (po zbudowaniu)
 ├── package.json         # Zależności i skrypty
 └── tsconfig.json        # Konfiguracja TypeScript
-``` 
+```
+
+## Testy end-to-end (E2E)
+
+Aplikacja zawiera również testy end-to-end z wykorzystaniem Playwright. Testy te sprawdzają działanie API w środowisku zbliżonym do produkcyjnego.
+
+### Uruchamianie testów E2E
+
+```bash
+# Uruchom wszystkie testy e2e
+npm run test:e2e
+
+# Uruchom testy e2e w trybie debug (z wizualizacją)
+npm run test:e2e:debug
+
+# Alternatywnie można użyć skryptu shell
+chmod +x ./e2e-test.sh
+./e2e-test.sh
+```
+
+### Struktura testów E2E
+
+- `e2e/orders.spec.ts` - testy podstawowych operacji na zamówieniach
+- `e2e/export.spec.ts` - testy funkcji eksportu do CSV
+- `e2e/setup.ts` - pomocnicze funkcje dla testów
+- `e2e/global-setup.ts` - konfiguracja środowiska testowego
+
+### Dobre praktyki testów E2E
+
+1. Testy E2E powinny sprawdzać krytyczne ścieżki użytkownika
+2. Testy powinny być niezależne od siebie
+3. Unikaj testowania szczegółów implementacji, skupiaj się na testowaniu funkcjonalności
+4. Używaj zmiennych środowiskowych, aby nie zaśmiecać prawdziwej bazy danych 

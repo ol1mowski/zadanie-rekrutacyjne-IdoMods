@@ -22,9 +22,9 @@ describe('Auth Middleware', () => {
     };
     
     mockResponse = {
-      status: vi.fn().mockReturnThis(),
-      setHeader: vi.fn().mockReturnThis(),
-      json: vi.fn().mockReturnThis()
+      status: vi.fn().mockReturnThis() as unknown as (code: number) => Response,
+      setHeader: vi.fn().mockReturnThis() as unknown as (name: string, value: string | number | readonly string[]) => Response,
+      json: vi.fn().mockReturnThis() as unknown as (body?: any) => Response
     };
     
     nextFunction = vi.fn() as unknown as NextFunction;

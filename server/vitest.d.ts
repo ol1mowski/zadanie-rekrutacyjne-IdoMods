@@ -10,6 +10,7 @@ declare module 'vitest' {
     clearAllMocks: () => void;
     mock: (path: string, factory?: () => any) => void;
     MockedFunction: any;
+    mocked: <T>(item: T) => jest.Mock<T>;
   };
   export const beforeEach: (fn: () => void | Promise<void>) => void;
   export const afterEach: (fn: () => void | Promise<void>) => void;
@@ -23,6 +24,7 @@ declare module 'vitest' {
       mockRejectedValueOnce: (value: any) => void;
       mockReturnValue: (value: any) => void;
       mockImplementation: (fn: (...args: any[]) => any) => void;
+      mockReturnThis: () => jest.Mock<T>;
     };
   }
 } 
