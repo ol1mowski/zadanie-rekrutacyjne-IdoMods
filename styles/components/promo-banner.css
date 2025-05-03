@@ -94,7 +94,6 @@
 }
 
 .promo-banner-button:hover {
-    background-color: var(--light-gray);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(var(--main-black), 0.1);
 }
