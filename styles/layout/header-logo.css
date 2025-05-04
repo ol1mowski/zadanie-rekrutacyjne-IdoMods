@@ -70,14 +70,12 @@
     font-size: 16px;
     display: flex;
     align-items: center;
-    font-weight: 400;
 }
 
 .code-tag {
     margin-left: 2px;
 }
 
-/* Informacje o użytkowniku */
 .user-info {
     display: flex;
     align-items: center;
