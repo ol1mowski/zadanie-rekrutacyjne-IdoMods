@@ -28,6 +28,20 @@ main {
     flex-direction: column;
 }
 
+a {
+    text-decoration: none;
+    color: var(--main-black);
+    font-size: 16px;
+    position: relative;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+}
+
 .body-text {
     font-size: var(--body-font-size);
     line-height: var(--body-line-height);
