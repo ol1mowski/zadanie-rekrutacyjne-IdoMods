@@ -10,7 +10,7 @@
     gap: 0.5rem;
 }
 
-.logo div {
+.logo-letter-container {
     border: 1px solid var(--main-black);
     padding: 0;
     display: flex;
@@ -25,12 +25,12 @@
     position: relative;
 }
 
-.logo div span {
+.logo-letter {
     font-weight: 600;
     font-size: 17px;
     transition: all 0.3s ease;
     position: absolute;
-    top: .8rem;
+    top: .7rem;
     left: 50%;
     transform: translate(-45%, -50%);
 }
