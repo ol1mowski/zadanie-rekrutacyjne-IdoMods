@@ -182,14 +182,10 @@ const initFeaturedProducts = () => {
         const scrollProgressBar = document.getElementById('scroll-progress-bar');
         if (!scrollProgressBar) return;
 
-        const scrollbarWidth = scrollProgressBar.parentElement.offsetWidth;
-        const progressWidth = 60;
+        const minProgressPercentage = 20;
+        const progressPercentage = minProgressPercentage + (scrollRatio * (100 - minProgressPercentage));
         
-        const maxTranslate = scrollbarWidth - progressWidth;
-        
-        const translateX = scrollRatio * maxTranslate;
-        
-        scrollProgressBar.style.transform = `translateX(${translateX}px)`;
+        scrollProgressBar.style.width = `${progressPercentage}%`;
     };
 
     const setupScrolling = () => {

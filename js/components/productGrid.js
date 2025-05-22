@@ -103,7 +103,6 @@ const initProductGrid = () => {
                     productsGrid.appendChild(productElement);
                 }
                 
-                // Sprawdź czy pobraliśmy mniej produktów niż oczekiwano (ostatnia strona)
                 if (productsData.data.length < state.productsPerPage) {
                     state.hasMoreProducts = false;
                 }
@@ -157,7 +156,6 @@ const initProductGrid = () => {
                     productsGrid.appendChild(productElement);
                 });
                 
-                // Sprawdź czy pobraliśmy mniej produktów niż oczekiwano (ostatnia strona)
                 if (productsData.data.length < state.productsPerPage) {
                     state.hasMoreProducts = false;
                 }
@@ -178,7 +176,6 @@ const initProductGrid = () => {
         const windowHeight = window.innerHeight;
         const documentHeight = document.documentElement.scrollHeight;
         
-        // Sprawdź czy użytkownik przewinął do określonej odległości od dołu strony (np. 200px od dołu)
         const distanceFromBottom = documentHeight - (scrollPosition + windowHeight);
         const triggerDistance = 200;
         
@@ -250,7 +247,6 @@ const initProductGrid = () => {
         }
     });
     
-    // Dodanie obsługi przewijania strony
     window.addEventListener('scroll', checkIfScrolledToBottom);
     
     initializeDropdownSelector();

@@ -116,11 +116,10 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 60px;
+    width: 20%;
     background-color: var(--main-black);
     border-radius: 2px;
-    transition: transform 0.3s ease;
-    transform: translateX(0);
+    transition: width 0.3s ease;
 }
 
 .error-message {
