@@ -3,6 +3,12 @@
     width: calc(25% - 1.125rem);
     position: relative;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .product-image-container {
@@ -16,6 +22,7 @@
     align-items: center;
     justify-content: center;
     padding: 15px;
+    transition: background-color 0.3s ease;
 }
 
 .product-badge {

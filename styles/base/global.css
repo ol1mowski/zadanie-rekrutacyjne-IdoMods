@@ -6,6 +6,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all 0.3s ease;
 }
 
 body {
@@ -33,6 +34,11 @@ a {
     color: var(--main-black);
     font-size: 16px;
     position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+    transform: translateY(-2px);
 }
 
 ul {
@@ -40,6 +46,20 @@ ul {
     list-style: none;
     gap: 2.5rem;
     align-items: center;
+}
+
+button, 
+.btn, 
+input[type="button"], 
+input[type="submit"] {
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover, 
+.btn:hover, 
+input[type="button"]:hover, 
+input[type="submit"]:hover {
+    transform: translateY(-2px);
 }
 
 .body-text {
