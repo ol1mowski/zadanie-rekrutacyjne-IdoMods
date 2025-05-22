@@ -106,13 +106,13 @@ const initFeaturedProducts = () => {
             });
 
             setupScrolling();
+            setupDragging(productsWrapper);
 
             productsWrapper.scrollLeft = 0;
 
             setTimeout(() => {
                 if (scrollProgressBar && productsWrapper.scrollWidth > productsWrapper.clientWidth) {
-                    const initialProgressValue = 20;
-                    scrollProgressBar.style.width = initialProgressValue + '%';
+                    updateScrollProgress(0);
                 }
 
                 const scrollEvent = new Event('scroll');
@@ -126,15 +126,78 @@ const initFeaturedProducts = () => {
         }
     };
 
+    const setupDragging = (productsWrapper) => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        productsWrapper.addEventListener('mousedown', (e) => {
+            isDown = true;
+            productsWrapper.classList.add('grabbing');
+            startX = e.pageX - productsWrapper.offsetLeft;
+            scrollLeft = productsWrapper.scrollLeft;
+            e.preventDefault();
+        });
+
+        productsWrapper.addEventListener('mouseleave', () => {
+            isDown = false;
+            productsWrapper.classList.remove('grabbing');
+        });
+
+        productsWrapper.addEventListener('mouseup', () => {
+            isDown = false;
+            productsWrapper.classList.remove('grabbing');
+        });
+
+        productsWrapper.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            const x = e.pageX - productsWrapper.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            productsWrapper.scrollLeft = scrollLeft - walk;
+        });
+
+        productsWrapper.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - productsWrapper.offsetLeft;
+            scrollLeft = productsWrapper.scrollLeft;
+        }, { passive: true });
+
+        productsWrapper.addEventListener('touchend', () => {
+            isDown = false;
+        }, { passive: true });
+
+        productsWrapper.addEventListener('touchcancel', () => {
+            isDown = false;
+        }, { passive: true });
+
+        productsWrapper.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            const x = e.touches[0].pageX - productsWrapper.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            productsWrapper.scrollLeft = scrollLeft - walk;
+        }, { passive: true });
+    };
+
+    const updateScrollProgress = (scrollRatio) => {
+        const scrollProgressBar = document.getElementById('scroll-progress-bar');
+        if (!scrollProgressBar) return;
+
+        const scrollbarWidth = scrollProgressBar.parentElement.offsetWidth;
+        const progressWidth = 60;
+        
+        const maxTranslate = scrollbarWidth - progressWidth;
+        
+        const translateX = scrollRatio * maxTranslate;
+        
+        scrollProgressBar.style.transform = `translateX(${translateX}px)`;
+    };
+
     const setupScrolling = () => {
         const scrollLeftBtn = document.getElementById('scroll-left-btn');
         const scrollRightBtn = document.getElementById('scroll-right-btn');
         const productsWrapper = document.getElementById('products-wrapper');
-        const scrollProgressBar = document.getElementById('scroll-progress-bar');
 
         if (!scrollLeftBtn || !scrollRightBtn || !productsWrapper) return;
-
-        const initialProgressValue = 20;
 
         const updateScrollButtons = () => {
             const maxScrollLeft = productsWrapper.scrollWidth - productsWrapper.clientWidth;
@@ -151,21 +214,15 @@ const initFeaturedProducts = () => {
                 scrollRightBtn.style.display = 'flex';
             }
 
-            if (scrollProgressBar && maxScrollLeft > 0) {
+            if (maxScrollLeft > 0) {
                 const scrollRatio = productsWrapper.scrollLeft / maxScrollLeft;
-                const scaledPercentage = initialProgressValue + (scrollRatio * (100 - initialProgressValue));
-                scrollProgressBar.style.width = scaledPercentage + '%';
+                updateScrollProgress(scrollRatio);
             }
         };
 
         window.addEventListener('resize', updateScrollButtons);
 
         scrollLeftBtn.style.display = 'none';
-
-        if (scrollProgressBar) {
-            scrollProgressBar.style.width = initialProgressValue + '%';
-        }
-
         updateScrollButtons();
 
         scrollLeftBtn.addEventListener('click', () => {
