@@ -9,7 +9,7 @@ const initProductGrid = () => {
         productsPerPage: 14,
         isMobileView: isMobile(),
         isLoading: false,
-        hasMoreProducts: false
+        hasMoreProducts: true
     };
 
     const createProductElementForGrid = (product, index) => {
@@ -74,7 +74,7 @@ const initProductGrid = () => {
             productsGrid.appendChild(promoBanner);
         }
         
-        state.hasMoreProducts = false;
+        state.hasMoreProducts = true;
         
         showLoader(loader);
         
@@ -102,11 +102,17 @@ const initProductGrid = () => {
                     const productElement = createProductElementForGrid(productsData.data[i], i);
                     productsGrid.appendChild(productElement);
                 }
+                
+                // Sprawdź czy pobraliśmy mniej produktów niż oczekiwano (ostatnia strona)
+                if (productsData.data.length < state.productsPerPage) {
+                    state.hasMoreProducts = false;
+                }
             } else {
                 productsGrid.innerHTML = '<p class="error-message">Brak produktów do wyświetlenia.</p>';
                 if (promoBanner) {
                     productsGrid.appendChild(promoBanner);
                 }
+                state.hasMoreProducts = false;
             }
             
             state.isLoading = false;
@@ -118,6 +124,66 @@ const initProductGrid = () => {
                 productsGrid.appendChild(promoBanner);
             }
             state.isLoading = false;
+            state.hasMoreProducts = false;
+        }
+    };
+    
+    const loadMoreProducts = async () => {
+        if (state.isLoading || !state.hasMoreProducts) return;
+        
+        const productsGrid = document.getElementById('products-grid');
+        const loader = document.getElementById('products-grid-loader');
+        
+        if (!productsGrid || !loader) return;
+        
+        showLoader(loader);
+        state.isLoading = true;
+        
+        try {
+            state.currentPage++;
+            
+            const productsData = await fetchProducts({
+                pageNumber: state.currentPage,
+                pageSize: state.productsPerPage
+            });
+            
+            hideLoader(loader);
+            
+            if (productsData.data && productsData.data.length > 0) {
+                const startIndex = (state.currentPage - 1) * state.productsPerPage;
+                
+                productsData.data.forEach((product, i) => {
+                    const productElement = createProductElementForGrid(product, startIndex + i);
+                    productsGrid.appendChild(productElement);
+                });
+                
+                // Sprawdź czy pobraliśmy mniej produktów niż oczekiwano (ostatnia strona)
+                if (productsData.data.length < state.productsPerPage) {
+                    state.hasMoreProducts = false;
+                }
+            } else {
+                state.hasMoreProducts = false;
+            }
+            
+            state.isLoading = false;
+        } catch (error) {
+            console.error('Błąd podczas ładowania kolejnych produktów:', error);
+            hideLoader(loader);
+            state.isLoading = false;
+        }
+    };
+    
+    const checkIfScrolledToBottom = () => {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        
+        // Sprawdź czy użytkownik przewinął do określonej odległości od dołu strony (np. 200px od dołu)
+        const distanceFromBottom = documentHeight - (scrollPosition + windowHeight);
+        const triggerDistance = 200;
+        
+        if (distanceFromBottom <= triggerDistance && !state.isLoading && state.hasMoreProducts) {
+            loadMoreProducts();
         }
     };
     
@@ -183,6 +249,9 @@ const initProductGrid = () => {
             loadInitialGridProducts();
         }
     });
+    
+    // Dodanie obsługi przewijania strony
+    window.addEventListener('scroll', checkIfScrolledToBottom);
     
     initializeDropdownSelector();
     loadInitialGridProducts();
